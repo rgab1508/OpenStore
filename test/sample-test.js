@@ -16,8 +16,8 @@ describe("NFTMarket", function () {
     const nftContractAddress = nft.address;
 
     let listingPrice = await market.getListingPrice();
-    // listingPrice = listingPrice.toString();
-    // console.log("listingPrice", listingPrice);
+    listingPrice = listingPrice.toString();
+    console.log("listingPrice", listingPrice);
 
     const auctionPrice = ethers.utils.parseUnits("1", "ether");
     console.log("auctionPrice", auctionPrice);

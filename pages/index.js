@@ -17,13 +17,13 @@ export default function Home() {
   const [loadingState, setLoadingState] = useState('not-loaded')
   useEffect(() => {
     loadNFTs()
-  }, [])
+  },[])
   async function loadNFTs() {
     /* create a generic provider and query for unsold market items */
-    const provider = new ethers.providfetchMatketItemsder()
+    const provider = new ethers.providers.JsonRpcProvider()
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
-    const data = await marketContract.fetchMarketItems()
+    const data = await marketContract.getMarketItems()
     
     /*
     *  map over items returned from smart contract and format 
