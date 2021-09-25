@@ -1,4 +1,4 @@
-// import { Image } from "@chakra-ui/image";
+import Image from "next/image";
 
 export default function Display() {
   return (
@@ -7,7 +7,12 @@ export default function Display() {
         <div className="row">
           <div className="col-md-6 text-center vanish-mobile">
             <section id="right_below_navbar_svg">
-              <img src="iphone.png" alt="Iphone icon" />
+              <Image
+                src="/assets/iphone.png"
+                height="100"
+                width="100"
+                alt="Iphone icon"
+              />
             </section>
           </div>
           <div className="col-md-6">

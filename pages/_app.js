@@ -1,40 +1,36 @@
-import '../styles/globals.css'
-import Link from 'next/link'
-
+/* eslint-disable @next/next/no-page-custom-font */
+import "../styles/globals.css";
+import Head from "next/head";
+import Navbar from "../components/Navbar";
 
 function MyApp({ Component, pageProps }) {
   return (
+    <>
+      <Head>
+        <meta name="description" content="Blockchain based NFT application" />
+        <link rel="icon" href="/favicon.png" />
 
-    
-    <div>
-      <nav className="border-b p-6">
-        <p className="text-4xl font-bold">Metaverse Marketplace</p>
-        <div className="flex mt-4">
-          <Link href="/">
-            <a className="mr-4 text-pink-500">
-              Home
-            </a>
-          </Link>
-          <Link href="/create-item">
-            <a className="mr-6 text-pink-500">
-              Sell Digital Asset
-            </a>
-          </Link>
-          <Link href="/my-assets">
-            <a className="mr-6 text-pink-500">
-              My Digital Assets
-            </a>
-          </Link>
-          <Link href="/creator-dashboard">
-            <a className="mr-6 text-pink-500">
-              Creator Dashboard
-            </a>
-          </Link>
-        </div>
-      </nav>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        {/* // eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap"
+          rel="stylesheet"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossOrigin="anonymous"
+        />
+      </Head>
+      <Navbar />
       <Component {...pageProps} />
-    </div>
-  )
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

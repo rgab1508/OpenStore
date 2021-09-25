@@ -3,40 +3,53 @@ import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
 
-import Navbar from "../components/Navbar.js";
-import Display from "../components/Display.js";
+import Navbar from "../../../components/Navbar";
+import Display from "../../../components/Display";
 
-import TopWaveFooter from "../components/TopWaveFooter.js";
+import TopWaveFooter from "../../../components/TopWaveFooter";
 
-import Card from "../components/card.js";
-import Team from "../components/Team.js";
-import ItemView from "../components/ItemView.js";
+import Card from "../components/Card";
+import Team from "../../../components/Team";
+import Itemview from "../../../components/ItemView";
 
-import WaveFooter from "../components/WaveFooter.js";
-import Footer from "../components/Footer.js";
+import WaveFooter from "../../../components/WaveFooter";
+import Footer from "../../../components/Footer";
 
-export default function Home() {
+export default function QuickView() {
   return (
     <div>
       <Script src="https://kit.fontawesome.com/a076d05399.js" />
       <Head>
         <title>Blockchain Based NFT Application</title>
         <meta name="description" content="Blockchain based NFT application" />
+        <link rel="icon" href="/favicon.png" />
+
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        {/* // eslint-disable-next-line @next/next/no-page-custom-font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap"
+          rel="stylesheet"
+        />
+
+        <link
+          rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+          crossOrigin="anonymous"
+        />
       </Head>
-      <Display />
-      <TopWaveFooter />
-      <main>
-        <div className="container">
-          <h1 className="title-main text-center">
-            <b>Products</b>
-          </h1>
-          <Card />
-        </div>
-        <Team />
-      </main>
+
+      <Navbar />
+      <Itemview />
+
+      <main></main>
       <footer>
         <WaveFooter />
         <Footer />
+
         <Script
           src="https://code.jquery.com/jquery-3.3.1.js"
           integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
