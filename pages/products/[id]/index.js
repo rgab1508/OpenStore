@@ -8,7 +8,7 @@ import Display from "../../../components/Display";
 
 import TopWaveFooter from "../../../components/TopWaveFooter";
 
-import Card from "../components/Card";
+import Card from "../../../components/Card";
 import Team from "../../../components/Team";
 import Itemview from "../../../components/ItemView";
 
