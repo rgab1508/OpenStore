@@ -16,10 +16,10 @@ describe("NFTMarket", function () {
     const nftContractAddress = nft.address;
 
     let listingPrice = await market.getListingPrice();
-    listingPrice = listingPrice.toString();
-    console.log("listingPrice", listingPrice);
+    // listingPrice = listingPrice.toString();
+    // console.log("listingPrice", listingPrice);
 
-    const auctionPrice = ethers.utils.parseUnits("1", "ether").toString();
+    const auctionPrice = ethers.utils.parseUnits("1", "ether");
     console.log("auctionPrice", auctionPrice);
 
     await nft.createToken("https://www.mytokenlocation.com");
@@ -38,7 +38,22 @@ describe("NFTMarket", function () {
       .connect(buyerAddress)
       .createMarketSale(nftContractAddress, 1, { value: auctionPrice });
 
-    const items = await market.getMarketItems();
+    let items = await market.getMarketItems();
+
+    items = await Promise.all(
+      items.map(async (item) => {
+        const tokenUri = await nft.tokenURI(item.tokenId);
+        let i = {
+          price: item.price.toString(),
+          tokenId: item.tokenId.toString(),
+          seller: item.seller,
+          owner: item.owner,
+          sold: item.sold,
+          tokenUri,
+        };
+        return i;
+      })
+    );
 
     console.log("items: ", items);
   });
