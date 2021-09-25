@@ -12,7 +12,7 @@ contract NFTMarket is ReentrancyGuard {
 
     // Currency is in Matic (lower price than ethereum)
     address payable owner; // The owner of the NFTMarket contract (transfer and send function availabe to payable addresses)
-    uint256 listingPrice = 0.001 ether; // This is made for owner of the file to be comissioned
+    uint256 listingPrice = 1 ether; // This is made for owner of the file to be comissioned
 
     constructor() {
         owner = payable(msg.sender);
@@ -89,8 +89,10 @@ contract NFTMarket is ReentrancyGuard {
     {
         uint256 price = idToMarketItem[itemId].price;
         uint256 tokenId = idToMarketItem[itemId].tokenId;
-        require(msg.value == price, "Price must be same as listing price");
-        require(idToMarketItem[itemId].isSold == true, "Item is already sold");
+        require(
+            msg.value == price,
+            "Please make the price to be same as listing price"
+        );
 
         idToMarketItem[itemId].seller.transfer(msg.value);
         IERC721(nftContract).transferFrom(address(this), msg.sender, tokenId);
