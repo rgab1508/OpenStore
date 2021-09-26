@@ -3,12 +3,10 @@ import Head from "next/head";
 import Script from "next/script";
 import Display from "../components/Display.js";
 import TopWaveFooter from "../components/TopWaveFooter.js";
-import Team from "../components/Team.js";
-import ItemView from "../components/ItemView.js";
 import WaveFooter from "../components/WaveFooter.js";
 import Footer from "../components/Footer.js";
 import ItemList from "../components/ItemList.js";
-import OwnAssestList from "../components/OwnAssestList";
+import CreatorDashboard from "../components/CreatorDashboard.js";
 
 export default function Home() {
   return (
@@ -35,7 +33,6 @@ export default function Home() {
       <footer>
         <WaveFooter />
         <Footer />
-        
       </footer>
     </div>
   );
