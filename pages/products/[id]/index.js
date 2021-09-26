@@ -22,7 +22,6 @@ export default function QuickView() {
       <Head>
         <title>Blockchain Based NFT Application</title>
         <meta name="description" content="Blockchain based NFT application" />
-        <link rel="icon" href="/favicon.png" />
 
         <link
           rel="stylesheet"

@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <meta name="description" content="Blockchain based NFT application" />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/assets/favicon.png" />
 
         <link
           rel="stylesheet"

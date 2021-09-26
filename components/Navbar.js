@@ -9,7 +9,7 @@ export default function Navbar() {
         <a className="navbar-brand" href="/shop">
           <div id="leftlogo">
             <Image
-              src="/navbarlogo.svg"
+              src="/assets/navbarlogo.svg"
               alt="Navbar Logo"
               className="d-inline-block align-top"
               loading="lazy"

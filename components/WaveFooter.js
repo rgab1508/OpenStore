@@ -4,7 +4,7 @@ export default function WaveFooter() {
   return (
     <div className="outer_box_for_waves">
       <section id="wavesbelownavbar">
-        <Image
+        <svg
           src="https://res.cloudinary.com/dnv3ztqf1/image/upload/v1605866339/Images%20for%20UNSCRIPT%20ROOKIE/logos/abovefootersvg_sironc.svg"
           alt="f"
           width="100%"
