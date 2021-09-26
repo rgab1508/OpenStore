@@ -1,7 +1,7 @@
 import React from "react";
 import Web3Modal from "web3modal";
 import { nftaddress, nftmarketaddress } from "../config";
-
+import Card from "./Card";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import NFTMarket from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 import { useEffect, useState } from "react";
@@ -74,7 +74,20 @@ const ItemList = () => {
     await transaction.wait();
     getItems();
   };
-  return <div>hii</div>;
+  return (
+    <div
+      style={{
+        flexDirection: "row",
+      }}
+    >
+      {items.length &&
+        items.map((item, key) => (
+          <div key={key}>
+            <Card data={item} />
+          </div>
+        ))}
+    </div>
+  );
 };
 
 export default ItemList;

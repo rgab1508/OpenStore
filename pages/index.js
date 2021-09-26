@@ -3,7 +3,6 @@ import Head from "next/head";
 import Script from "next/script";
 import Display from "../components/Display.js";
 import TopWaveFooter from "../components/TopWaveFooter.js";
-import Card from "../components/Card.js";
 import Team from "../components/Team.js";
 import ItemView from "../components/ItemView.js";
 import WaveFooter from "../components/WaveFooter.js";
@@ -25,7 +24,6 @@ export default function Home() {
           <h1 className="title-main text-center">
             <b>Products</b>
           </h1>
-          <Card />
           <ItemList />
         </div>
         <Team />

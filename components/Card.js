@@ -1,23 +1,23 @@
 import Image from "next/image";
 
-export default function Card() {
+export default function Card({ data }) {
   return (
     <div className=" col-md-4">
       <div className="card shadow margin-56">
         <Image
           className="card-img-top"
-          src="/assets/cake.jpg"
+          src={data.image}
           alt="Card image cap"
-          width="100%"
-          height="100%"
+          width={200}
+          height={250}
         />
         <div className="card-body">
           <h5 className="card-title" id="namepr{{i.id}}">
-            Cake
+            {data.name}
           </h5>
-          <h5 className="card-title">
+          {/* <h5 className="card-title">
             <b>ETH</b> 500
-          </h5>
+          </h5> */}
           <div className="row">
             <div className="col-6">
               <span id="divpr{{i.id}}" className="divpr">
