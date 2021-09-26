@@ -19,14 +19,16 @@ export default function Home() {
       </Head>
       <Display />
       <TopWaveFooter />
-      <main style={{ marginTop: "30px" }}>
+      <main style={{ marginTop: "30px", marginBottom: "50px" }}>
         <div className="container">
-          <h1 className="title-main text-center">
-            <b>Products</b>
+          <h1
+            className="title-main text-center"
+            style={{ marginBottom: "30px", fontWeight: "bold" }}
+          >
+            Products
           </h1>
           <ItemList />
         </div>
-        <Team />
       </main>
 
       <footer>

@@ -77,15 +77,12 @@ const ItemList = () => {
   return (
     <div
       style={{
+        display: "flex",
         flexDirection: "row",
+        flexWrap: "wrap",
       }}
     >
-      {items.length &&
-        items.map((item, key) => (
-          <div key={key}>
-            <Card data={item} />
-          </div>
-        ))}
+      {items.length && items.map((item, key) => <Card key={key} data={item} />)}
     </div>
   );
 };
