@@ -11,13 +11,18 @@ import axios from "axios";
 const ItemList = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [filterCategory, setFilterCategory] = useState("All");
 
   useEffect(() => {
-    getItems();
+    getItems("All");
     setIsLoading(false);
   }, []);
 
-  const getItems = async () => {
+  useEffect(() => {
+    getItems(filterCategory);
+  }, [filterCategory]);
+
+  const getItems = async (category) => {
     const provider = new ethers.providers.JsonRpcProvider();
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(
@@ -25,7 +30,12 @@ const ItemList = () => {
       NFTMarket.abi,
       provider
     );
-    const data = await marketContract.getMarketItems();
+    let data;
+    if (category == "All") {
+      data = await marketContract.getMarketItems();
+    } else {
+      data = await marketContract.getItemsByCategory(category);
+    }
 
     console.log(data);
 
@@ -74,15 +84,38 @@ const ItemList = () => {
     await transaction.wait();
     getItems();
   };
+
   return (
     <div
       style={{
         display: "flex",
-        flexDirection: "row",
-        flexWrap: "wrap",
+        flexDirection: "column",
+        gap: "20px",
       }}
     >
-      {items.length && items.map((item, key) => <Card key={key} data={item} />)}
+      <div style={{ width: "200px" }}>
+        <label htmlFor="category">Category:</label>{" "}
+        <select
+          name="category"
+          id="category"
+          onChange={(e) => setFilterCategory(e.target.value)}
+        >
+          <option value="All">All</option>
+          <option value="Art">Art</option>
+          <option value="Graphics">Graphics</option>
+          <option value="Others">Others</option>
+        </select>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+        }}
+      >
+        {items.length &&
+          items.map((item, key) => <Card key={key} data={item} />)}
+      </div>
     </div>
   );
 };

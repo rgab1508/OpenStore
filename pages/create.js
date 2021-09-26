@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ethers } from "ethers";
 import { create as ipfsHttpClient } from "ipfs-http-client";
 import WaveFooter from "../components/WaveFooter";
@@ -20,6 +20,7 @@ export default function CreateItem() {
   const [values, setValues] = useState({
     price: "",
     name: "",
+    category: "",
     fileUrl: null,
     desc: "",
   });
@@ -84,7 +85,7 @@ export default function CreateItem() {
         nftaddress,
         tokenId,
         price,
-        "Category",
+        values.category,
         {
           value: listingPrice,
         }
@@ -104,6 +105,8 @@ export default function CreateItem() {
       };
     });
   };
+
+  useEffect(() => console.log(values), [values]);
 
   return (
     <div>
@@ -177,6 +180,7 @@ export default function CreateItem() {
                       accept="image/*"
                       name="Asset"
                       className="my-4"
+                      onChange={onChange}
                     />
                   </li>
                 </ul>
@@ -188,10 +192,15 @@ export default function CreateItem() {
                     alt="Product image"
                   />
                 )}
-
+                <label htmlFor="category">Category:</label>{" "}
+                <select name="category" id="category" onChange={handleChange}>
+                  <option value="Art">Art</option>
+                  <option value="Graphics">Graphics</option>
+                  <option value="Others">Others</option>
+                </select>
                 <button
-                  onClick={createSale}
-                  className="btn btn-block commonbutton5"
+                  onClick={createMarket}
+                  className="btn mt-5 btn-block commonbutton5"
                   type="submit"
                 >
                   Submit
@@ -204,21 +213,6 @@ export default function CreateItem() {
       <footer>
         <WaveFooter />
         <Footer />
-        <Script
-          src="https://code.jquery.com/jquery-3.3.1.js"
-          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-          crossOrigin="anonymous"
-        ></Script>
-        <Script
-          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-          integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-          crossOrigin="anonymous"
-        ></Script>
-        <Script
-          src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-          integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-          crossOrigin="anonymous"
-        ></Script>
       </footer>
     </div>
   );
