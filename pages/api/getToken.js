@@ -16,10 +16,20 @@ export default async function handler(req, res) {
       return;
     }
     else {
-      var user = await client.query("INSERT INTO USERS PUBLIC_KEY, NONCE VALUES ($1, $2) RETURNING NONCE", [public_key, crypto.randomBytes(8).toString('hex')]);
-      res.json(user);
+      var user = await client.query("INSERT INTO USERS (PUBLIC_KEY, NONCE) VALUES ($1, $2) RETURNING NONCE", [public_key, crypto.randomBytes(8).toString('hex')]);
+      if (user.rows.length > 0) {
+        res.json(user.rows[0]);
+        return;
+      }
+      else {
+        res.writeHead(302, {
+          Location: "/",
+        });
+        res.end();
+      }
     }
   } catch (e) {
+    console.log(e);
     res.writeHead(302, {
       Location: "/",
     });
