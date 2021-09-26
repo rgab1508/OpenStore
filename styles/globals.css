@@ -1,448 +1,443 @@
-
-    /*   ? FROM HERE ALL THE COMMON CHANGES
+/*   ? FROM HERE ALL THE COMMON CHANGES
 ------------------------------------*/
-        * {
-            margin: 0;
-            padding: 0;
-            font-family: "Raleway", sans-serif;
-            scroll-behavior: smooth;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  scroll-behavior: smooth;
+}
 
-        *::selection {
-            color: black;
-            background-color: #4c00ff31;
-        }
+*::selection {
+  color: black;
+  background-color: #4c00ff31;
+}
 
-        /* *global changes for navbar and footer anchor tags*/
-        .navbar a {
-            color: rgb(255, 255, 255) !important;
-            transition: all 0.3s ease-in-out;
-        }
+/* *global changes for navbar and footer anchor tags*/
+.navbar a {
+  color: rgb(255, 255, 255) !important;
+  transition: all 0.3s ease-in-out;
+}
 
-        .navbar a:hover {
-            color: rgb(243, 255, 75) !important;
-            font-family: "Raleway", sans-serif;
-        }
+.navbar a:hover {
+  color: rgb(243, 255, 75) !important;
+  font-family: "Raleway", sans-serif;
+}
 
-        .footer_bottom a:hover {
-            color: rgb(243, 255, 75) !important;
-            font-family: "Raleway", sans-serif;
-        }
+.footer_bottom a:hover {
+  color: rgb(243, 255, 75) !important;
+  font-family: "Raleway", sans-serif;
+}
 
-        .footer_bottom a {
-            color: rgb(255, 255, 255) !important;
-            transition: all 0.3s ease-in-out;
-        }
+.footer_bottom a {
+  color: rgb(255, 255, 255) !important;
+  transition: all 0.3s ease-in-out;
+}
 
-        /* *global changes for navbar and footer anchor tags*/
-        svg {
-            align-items: baseline;
-            align-self: center;
-            align-content: center;
-            margin: 0 auto;
-        }
+/* *global changes for navbar and footer anchor tags*/
+svg {
+  align-items: baseline;
+  align-self: center;
+  align-content: center;
+  margin: 0 auto;
+}
 
-        /***Button's focus pe colour remove in bootstrap*/
-        .btn:focus {
-            outline: none;
-            box-shadow: none;
-        }
+/***Button's focus pe colour remove in bootstrap*/
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
 
-        .commonbuttons:focus {
-            outline: none;
-            box-shadow: none;
-        }
+.commonbuttons:focus {
+  outline: none;
+  box-shadow: none;
+}
 
-        #commonbuttons:focus {
-            outline: none;
-            box-shadow: none;
-        }
+#commonbuttons:focus {
+  outline: none;
+  box-shadow: none;
+}
 
-        /**imp feature hai ye*/
-        i:hover {
-            transform: scale(1.1);
-            opacity: 0.6;
-        }
+/**imp feature hai ye*/
+i:hover {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
 
-        svg:hover {
-            transform: scale(1.1);
-            opacity: 0.6;
-        }
+svg:hover {
+  transform: scale(1.1);
+  opacity: 0.6;
+}
 
-        h3 {
-            padding: 2% 2% 2% 2%;
-        }
+h3 {
+  padding: 2% 2% 2% 2%;
+}
 
-        h4 {
-            padding: 2% 0% 2% 0%;
-        }
+h4 {
+  padding: 2% 0% 2% 0%;
+}
 
-        h5 {
-            padding: 0% 0% 2% 0%;
-        }
+h5 {
+  padding: 0% 0% 2% 0%;
+}
 
-        .box-description {
-            background-color: #e3f3ee;
-        }
+.box-description {
+  background-color: #e3f3ee;
+}
 
-        /*todo Navbar contents from here*/
-        .navbar-nav li {
-            padding: 0 10px;
-        }
+/*todo Navbar contents from here*/
+.navbar-nav li {
+  padding: 0 10px;
+}
 
-        .navbar-nav li a {
-            text-align: right;
-            color: #fff;
-            font-size: large;
-            font-weight: 600;
-        }
+.navbar-nav li a {
+  text-align: right;
+  color: #fff;
+  font-size: large;
+  font-weight: 600;
+}
 
-        .navbar {
-            background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
-        }
+.navbar {
+  background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
+}
 
-        #leftlogo img {
-            width: 200px;
-            height: 70px;
-        }
+#leftlogo img {
+  width: 200px;
+  height: 70px;
+}
 
-        @media only screen and (max-width: 600px) {
-            #leftlogo img {
-                width: 100px;
-                height: 35px;
-            }
-        }
+@media only screen and (max-width: 600px) {
+  #leftlogo img {
+    width: 100px;
+    height: 35px;
+  }
+}
 
-        .navbar-toggler {
-            background-color: #0ee3ff !important;
-            border: none !important;
-        }
+.navbar-toggler {
+  background-color: #0ee3ff !important;
+  border: none !important;
+}
 
-        #navbar-toggler-icon {
-            color: black;
-        }
+#navbar-toggler-icon {
+  color: black;
+}
 
-        .col-sm-2 svg {
-            align-items: center;
-        }
+.col-sm-2 svg {
+  align-items: center;
+}
 
-        /**-THE UNDERLINE EFFECT OF LINK of particular page-*/
-        a.left {
-            position: relative;
-        }
+/**-THE UNDERLINE EFFECT OF LINK of particular page-*/
+a.left {
+  position: relative;
+}
 
-        a.left:before {
-            content: "";
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background-color: rgb(255, 255, 255);
-            visibility: hidden;
-            transition: all 0.3s ease-in-out;
-        }
+a.left:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
 
-        a.left:hover:before {
-            visibility: visible;
-            width: 100%;
-        }
+a.left:hover:before {
+  visibility: visible;
+  width: 100%;
+}
 
-        /* **for the link with highlight for he particular page*/
-        a.highlight {
-            color: white !important;
-        }
+/* **for the link with highlight for he particular page*/
+a.highlight {
+  color: white !important;
+}
 
-        /*
+/*
  ! Navbar contents end from here
 */
-        /** the written stuff below navbar*/
-        .box-for-names {
-            margin: 10% 3% 10% 3%;
-            padding: 5%;
-        }
+/** the written stuff below navbar*/
+.box-for-names {
+  margin: 10% 3% 10% 3%;
+  padding: 5%;
+}
 
-        .below-navbar-container {
-            background: -webkit-linear-gradient(right, #0072ff, #00c6ff);
-        }
+.below-navbar-container {
+  background: -webkit-linear-gradient(right, #0072ff, #00c6ff);
+}
 
-        #commonbuttons {
-            padding: 2%;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 18px;
-            background: -webkit-linear-gradient(right, #754888, #220031);
-            width: 200px;
-            transition: all 0.3s ease-in;
-            border: none;
-        }
+#commonbuttons {
+  padding: 2%;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+  background: -webkit-linear-gradient(right, #754888, #220031);
+  width: 200px;
+  transition: all 0.3s ease-in;
+  border: none;
+}
 
-          .commonbutton5 {
-            padding: 2%;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 18px;
-            background: -webkit-linear-gradient(right, #754888, #220031);
-            transition: all 0.3s ease-in;
-            border: none;
-        }
+.commonbutton5 {
+  padding: 2%;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+  background: -webkit-linear-gradient(right, #754888, #220031);
+  transition: all 0.3s ease-in;
+  border: none;
+}
 
+#commonbuttons:hover {
+  padding: 2%;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+  background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
+  width: 200px;
+  border-block-style: none;
+  border: none;
+  transform: scale(1.05);
+}
 
-        #commonbuttons:hover {
-            padding: 2%;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 18px;
-            background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
-            width: 200px;
-            border-block-style: none;
-            border: none;
-            transform: scale(1.05);
-        }
+.commonbuttons {
+  padding: 2%;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+  background: -webkit-linear-gradient(right, #754888, #220031);
+  width: 130px;
+  transition: all 0.3s ease-in;
+  border: none;
+}
 
-        .commonbuttons {
-            padding: 2%;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 18px;
-            background: -webkit-linear-gradient(right, #754888, #220031);
-            width: 130px;
-            transition: all 0.3s ease-in;
-            border: none;
-        }
+.commonbuttons:hover {
+  padding: 2%;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+  background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
+  width: 130px;
+  border-block-style: none;
+  border: none;
+  transform: scale(1.05);
+}
 
-        .commonbuttons:hover {
-            padding: 2%;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 18px;
-            background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
-            width: 130px;
-            border-block-style: none;
-            border: none;
-            transform: scale(1.05);
-        }
+#commonbutton {
+  padding: 2%;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+  background: -webkit-linear-gradient(right, #754888, #220031);
+  width: 200px;
+  transition: all 0.3s ease-in;
+  border: none;
+}
 
-        #commonbutton {
-            padding: 2%;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 18px;
-            background: -webkit-linear-gradient(right, #754888, #220031);
-            width: 200px;
-            transition: all 0.3s ease-in;
-            border: none;
-        }
+#commonbutton:hover {
+  padding: 2%;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  font-size: 18px;
+  background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
+  width: 200px;
+  border-block-style: none;
+  border: none;
+  transform: scale(1.05);
+}
 
-        #commonbutton:hover {
-            padding: 2%;
-            border: none;
-            border-radius: 25px;
-            color: white;
-            font-size: 18px;
-            background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
-            width: 200px;
-            border-block-style: none;
-            border: none;
-            transform: scale(1.05);
-        }
-
-        /*
+/*
     todo below the navbar right side svg
 */
-        #right_below_navbar_svg img {
-            width: 100%;
-            height: auto;
-        }
+#right_below_navbar_svg img {
+  width: 100%;
+  height: auto;
+}
 
-        #hello-world h1 {
-            color: #fff;
-            font-size: 70px;
-        }
+#hello-world h1 {
+  color: #fff;
+  font-size: 70px;
+}
 
-        #hello-world h4 {
-            color: white;
-            font-size: 30px;
-            font-weight: 500;
-        }
+#hello-world h4 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
 
-        @media only screen and (max-width: 991px) {
-            #hello-world h1 {
-                color: #fff;
-                font-size: 50px;
-            }
+@media only screen and (max-width: 991px) {
+  #hello-world h1 {
+    color: #fff;
+    font-size: 50px;
+  }
 
-            #hello-world h4 {
-                color: white;
-                font-size: 25px;
-                font-weight: 500;
-            }
-        }
+  #hello-world h4 {
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+  }
+}
 
-        @media only screen and (max-width: 1233px) {
-            #hello-world h1 {
-                color: #fff;
-                font-size: 60px;
-            }
+@media only screen and (max-width: 1233px) {
+  #hello-world h1 {
+    color: #fff;
+    font-size: 60px;
+  }
 
-            #hello-world h4 {
-                color: white;
-                font-size: 30px;
-                font-weight: 500;
-            }
-        }
+  #hello-world h4 {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
 
-        @media only screen and (max-width: 600px) {
-            #hello-world h1 {
-                color: #fff;
-                font-size: 50px;
-            }
+@media only screen and (max-width: 600px) {
+  #hello-world h1 {
+    color: #fff;
+    font-size: 50px;
+  }
 
-            #hello-world h4 {
-                color: white;
-                font-size: 30px;
-                font-weight: 500;
-            }
-        }
+  #hello-world h4 {
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
 
-        /**the Computer the Svg and banner*/
-        #belowthehomepagebanner img {
-            width: 100%;
-            height: 500px;
-        }
+/**the Computer the Svg and banner*/
+#belowthehomepagebanner img {
+  width: 100%;
+  height: 500px;
+}
 
-        .text-konechelo {
-            margin-top: 5%;
-        }
+.text-konechelo {
+  margin-top: 5%;
+}
 
-        .paragraphinbody {
-            font-size: 18px;
-            font-weight: 500;
-        }
+.paragraphinbody {
+  font-size: 18px;
+  font-weight: 500;
+}
 
-        /***waves part below slider */
-        .outer_box_for_waves {
-            overflow: hidden;
-            color: aliceblue;
-            background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
-        }
-
+/***waves part below slider */
+.outer_box_for_waves {
+  overflow: hidden;
+  color: aliceblue;
+  background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
+}
 
 /***footer section of the website*/
 .footer_bottom {
-    background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
+  background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
 }
 
 .footer_about_section h3 {
-    color: #fff;
+  color: #fff;
 }
 
 .footer_quicklinks_section h3 {
-    color: #fff;
+  color: #fff;
 }
 
 .footer_contact_section h3 {
-    color: #fff;
+  color: #fff;
 }
 
 .footer_about_section p {
-    color: #fff;
+  color: #fff;
 }
 
 .footer_quicklinks_section p {
-    color: #fff;
+  color: #fff;
 }
 
 .footer_contact_section p {
-    color: #fff;
+  color: #fff;
 }
 
 .footer_about_section p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .footer-links li {
-    list-style: none;
-    font-size: 18px;
+  list-style: none;
+  font-size: 18px;
 }
 
 .footer-links li a {
-    text-decoration: wavy;
+  text-decoration: wavy;
 }
 
 /*social media stuff on footer*/
 #github {
-    color: #ffffff;
-    padding: 5% 0% 5% 0%;
+  color: #ffffff;
+  padding: 5% 0% 5% 0%;
 }
 
 #github:hover {
-    color: black;
-    transform: scale(1.1);
+  color: black;
+  transform: scale(1.1);
 }
 
 #linkedin {
-    color: #ffffff;
-    padding: 5% 0% 5% 0%;
+  color: #ffffff;
+  padding: 5% 0% 5% 0%;
 }
 
 #linkedin:hover {
-    color: #005f92;
-    transform: scale(1.1);
+  color: #005f92;
+  transform: scale(1.1);
 }
 
 #instagram {
-    color: #ffffff;
-    padding: 5% 0% 5% 0%;
+  color: #ffffff;
+  padding: 5% 0% 5% 0%;
 }
 
 #instagram:hover {
-    color: #3c0044;
-    transform: scale(1.1);
+  color: #3c0044;
+  transform: scale(1.1);
 }
 
 #twitter {
-    color: #ffffff;
-    padding: 5% 0% 5% 0%;
+  color: #ffffff;
+  padding: 5% 0% 5% 0%;
 }
 
 #twitter:hover {
-    color: #1bffec;
-    border: black;
-    transform: scale(1.1);
+  color: #1bffec;
+  border: black;
+  transform: scale(1.1);
 }
 
 /*
 *foooter end
 */
 
-
-        /*
+/*
 todo carousel Indictors
 */
 
-        .carousel-indicators {
-            top: 450px;
-            background-color: #005f92;
-            color: black;
-            border: #005f92;
-        }
+.carousel-indicators {
+  top: 450px;
+  background-color: #005f92;
+  color: black;
+  border: #005f92;
+}
 
-        .carousel-indicators li {
-            background-color: #005f92;
-        }
+.carousel-indicators li {
+  background-color: #005f92;
+}
 
-        .non-active {
-            color: red;
-            background-color: pink;
-        }
-
+.non-active {
+  color: red;
+  background-color: pink;
+}
 
 /*
 display ka css
@@ -456,52 +451,42 @@ display ka css
   margin: 10% 3% 10% 3%;
   padding: 5%;
 }
-.below-navbar-container{
-    background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
+.below-navbar-container {
+  background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
 }
 
 /*teams */
 
-.hover-effect-zoom{
-    border-radius: 50%;   
+.hover-effect-zoom {
+  border-radius: 50%;
 }
 /* .background-black{
     background-color: #e7e7e7;
 } */
 
-
 /*
 itemview css
 */
 
-
-
-
-
-.item-info{
+.item-info {
   padding-top: 10%;
 }
 
 /*
 top right bottom left
 */
-.slight-big{
-  padding:5% 10% 5% 10%;
-  border-radius:3px!important;
-    transform: none;
-
+.slight-big {
+  padding: 5% 10% 5% 10%;
+  border-radius: 3px !important;
+  transform: none;
 }
 
-.slight-big:hover{
- 
-
-  padding:5% 10% 5% 10%;
-
-
+.slight-big:hover {
+  padding: 5% 10% 5% 10%;
 }
 
-.small-font{
-font-size:15px;
+.small-font {
+  font-size: 15px;
 }
 /* span { 
    font-size: 3em; 
@@ -509,12 +494,11 @@ font-size:15px;
 
 span::first-letter { font-size: 60%; } */
 
-
-.big-text{
- font-size:50px;
+.big-text {
+  font-size: 50px;
 }
-.small-text{
-  font-size:20px;
+.small-text {
+  font-size: 20px;
 }
 
 /*forms styling for the django automatic forms */
@@ -565,7 +549,7 @@ ul.form-group {
 ul {
   list-style-type: none;
 }
-@media (max-width: 999px) {
+@media (max-width: 700px) {
   .block-to-disappear-in-mobile {
     display: none;
   }
