@@ -113,8 +113,11 @@ const ItemList = () => {
           flexWrap: "wrap",
         }}
       >
-        {items.length &&
-          items.map((item, key) => <Card key={key} data={item} />)}
+        {items.length > 0 ? (
+          items.map((item, key) => <Card key={key} data={item} />)
+        ) : (
+          <h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>
+        )}
       </div>
     </div>
   );
