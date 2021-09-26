@@ -43,6 +43,7 @@ export default async function handler(req, res) {
       res.status(400).json({ error: "Invalid USer" });
     }
   } catch (e) {
+    console.log(e);
     res.writeHead(302, {
       Location: "/",
     });
