@@ -115,7 +115,9 @@ const ItemList = () => {
         }}
       >
         {items.length > 0 ? (
-          items.map((item, key) => <Card key={key} data={item} />)
+          items.map((item, key) => (
+            <Card key={key} buyNft={buyNft} data={item} />
+          ))
         ) : (
           <h1 className="px-20 py-10 text-3xl">No items in marketplace</h1>
         )}

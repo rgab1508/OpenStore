@@ -19,7 +19,7 @@ const ItemList = () => {
 
   const getItems = async () => {
     const web3Modal = new Web3Modal({
-      network: "mainnet",
+      network: "mumbai",
       cacheProvider: true,
     });
 
@@ -33,7 +33,7 @@ const ItemList = () => {
       signer
     );
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
-    const data = await marketContract.getMarketItems();
+    const data = await marketContract.fetchPurchasedNFTs();
 
     console.log(data);
 
@@ -44,6 +44,7 @@ const ItemList = () => {
         const price = ethers.utils.formatUnits(d.price.toString(), "ether");
 
         return {
+          price,
           tokenId: d.tokenId.toNumber(),
           seller: d.seller,
           owner: d.owner,
