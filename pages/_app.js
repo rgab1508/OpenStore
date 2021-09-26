@@ -6,41 +6,6 @@ import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   return (
-<<<<<<< HEAD
-
-    
-    <div>
-      <nav className="border-b p-6">
-        <p className="text-4xl font-bold">Metaverse Marketplace</p>
-        <div className="flex mt-4">
-          <Link href="/">
-            <a className="mr-4 text-pink-500">
-              Home
-            </a>
-          </Link>
-          <Link href="/create-item">
-            <a className="mr-6 text-pink-500">
-              Sell Digital Asset
-            </a>
-          </Link>
-          <Link href="/my-assets">
-            <a className="mr-6 text-pink-500">
-              My Digital Assets
-            </a>
-          </Link>
-          <Link href="/NextIntroPage">
-            <a className="mr-6 text-pink-500">
-              My next intro page
-            </a>
-          </Link>
-          <Link href="/creator-dashboard">
-            <a className="mr-6 text-pink-500">
-              Creator Dashboard
-            </a>
-          </Link>
-        </div>
-      </nav>
-=======
     <>
       <Head>
         <meta name="description" content="Blockchain based NFT application" />
@@ -79,7 +44,6 @@ function MyApp({ Component, pageProps }) {
         />
       </Head>
       <Navbar />
->>>>>>> cc64109f7f20e915eb9a7850381a88d6c308702c
       <Component {...pageProps} />
     </>
   );

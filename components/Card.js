@@ -36,7 +36,7 @@ export default function Card({ data, key }) {
           </div>
           <br />
           <br />
-          <p className="card-text">{data.desc}</p>
+          <p className="card-text">{data.description}</p>
         </div>
       </div>
     </div>

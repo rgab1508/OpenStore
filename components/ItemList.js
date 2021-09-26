@@ -51,7 +51,7 @@ const ItemList = () => {
           owner: d.owner,
           image: meta.data.image,
           name: meta.data.name,
-          desc: meta.data.desc,
+          description: meta.data.description,
         };
       })
     );

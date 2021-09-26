@@ -18,18 +18,21 @@ const ItemList = () => {
   }, []);
 
   const getItems = async () => {
-
     const web3Modal = new Web3Modal({
-        network: "mainnet",
-        cacheProvider: true,
-      })
-    
-    const connection = await web3Modal.connect()
-    const provider = new ethers.providers.Web3Provider(connection)
-    const signer = provider.getSigner()
-    
-    const marketContract = new ethers.Contract(nftmarketaddress, NFTMarket.abi, signer)
-    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
+      network: "mainnet",
+      cacheProvider: true,
+    });
+
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);
+    const signer = provider.getSigner();
+
+    const marketContract = new ethers.Contract(
+      nftmarketaddress,
+      NFTMarket.abi,
+      signer
+    );
+    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
     const data = await marketContract.getMarketItems();
 
     console.log(data);
@@ -46,7 +49,7 @@ const ItemList = () => {
           owner: d.owner,
           image: meta.data.image,
           name: meta.data.name,
-          desc: meta.data.desc,
+          description: meta.data.description,
         };
       })
     );
