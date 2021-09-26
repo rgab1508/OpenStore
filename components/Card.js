@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Card({ data, key }) {
+export default function Card({ data, buyNft, key }) {
   return (
     <div key={key} className=" col-md-4">
       <div className="card shadow margin-56">
@@ -15,9 +15,9 @@ export default function Card({ data, key }) {
           <h5 className="card-title" id="namepr{{i.id}}">
             {data.name}
           </h5>
-          {/* <h5 className="card-title">
-            <b>ETH</b> 500
-          </h5> */}
+          <h5 className="card-title">
+            {data.price} <b>ETH</b>
+          </h5>
           <div className="row">
             <div className="col-6">
               <span id="divpr{{i.id}}" className="divpr">
@@ -27,16 +27,17 @@ export default function Card({ data, key }) {
               </span>
             </div>
             <div className="col-6">
-              <a href="/shop/products/{{i.id}}">
-                <button id="qv{{i.id}}" className="commonbuttons">
-                  Quick View
-                </button>
-              </a>
+              <button
+                onClick={() => buyNft(data)}
+                id="qv{{i.id}}"
+                className="commonbuttons"
+              >
+                Buy Now
+              </button>
             </div>
           </div>
           <br />
-          <br />
-          <p className="card-text">{data.description}</p>
+          <p className="card-text">{data.desc}</p>
         </div>
       </div>
     </div>

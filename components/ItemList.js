@@ -46,6 +46,7 @@ const ItemList = () => {
         const price = ethers.utils.formatUnits(d.price.toString(), "ether");
 
         return {
+          price,
           tokenId: d.tokenId.toNumber(),
           seller: d.seller,
           owner: d.owner,
@@ -60,15 +61,15 @@ const ItemList = () => {
     setItems(newItems);
   };
 
-  const buyNft = async () => {
+  const buyNft = async (nft) => {
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect();
-    const prov = await ethers.providers.web3Provider(connection);
+    const prov = new ethers.providers.Web3Provider(connection);
 
     const signer = prov.getSigner();
-    const contract = await ethers.Contract(
+    const contract = new ethers.Contract(
       nftmarketaddress,
-      Market.abi,
+      NFTMarket.abi,
       signer
     );
 
