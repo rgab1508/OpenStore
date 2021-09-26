@@ -177,6 +177,7 @@ export default function CreateItem() {
                       accept="image/*"
                       name="Asset"
                       className="my-4"
+                      onChange={onChange}
                     />
                   </li>
                 </ul>
