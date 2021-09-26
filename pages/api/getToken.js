@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       return;
     }
     else {
-      var user = await client.query("INSERT INTO USERS PUBLIC_KEY, NONCE VALUES ($1, $2) RETURNING NONCE", [public_key, crypto.randomBytes(8).toString('hex')]);
+      var user = await client.query("INSERT INTO USERS (PUBLIC_KEY, NONCE) VALUES ($1, $2) RETURNING NONCE", [public_key, crypto.randomBytes(8).toString('hex')]);
       res.json(user);
     }
   } catch (e) {
