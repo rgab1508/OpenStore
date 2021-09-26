@@ -32,7 +32,7 @@ const ItemList = () => {
     let newItems = await Promise.all(
       data.map(async (d) => {
         const tokenUri = await tokenContract.tokenURI(d.tokenId);
-        const meta = axios(tokenUri);
+        const meta = await axios.get(tokenUri);
         const price = ethers.utils.formatUnits(d.price.toString(), "ether");
 
         return {
@@ -45,6 +45,7 @@ const ItemList = () => {
         };
       })
     );
+    console.log(newItems);
 
     setItems(newItems);
   };

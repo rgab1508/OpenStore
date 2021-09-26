@@ -57,33 +57,39 @@ export default function CreateItem() {
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
+    console.log(url);
 
     /* next, create the item */
-    let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
-    let transaction = await contract.createToken(url);
-    let tx = await transaction.wait();
-    let event = tx.events[0];
-    let value = event.args[2];
-    let tokenId = value.toNumber();
+    try {
+      let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
+      let transaction = await contract.createToken(url);
+      let tx = await transaction.wait();
+      let event = tx.events[0];
+      let value = event.args[2];
+      let tokenId = value.toNumber();
+      console.log(values);
+      const price = ethers.utils.parseUnits(values.price, "ether");
+      console.log(price.toString());
 
-    const price = ethers.utils.parseUnits(values.price, "ether");
+      /* then list the item for sale on the marketplace */
+      contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
+      let listingPrice = await contract.getListingPrice();
+      listingPrice = listingPrice.toString();
 
-    /* then list the item for sale on the marketplace */
-    contract = new ethers.Contract(nftmarketaddress, Market.abi, signer);
-    let listingPrice = await contract.getListingPrice();
-    listingPrice = listingPrice.toString();
-
-    transaction = await contract.createMarketItem(
-      nftaddress,
-      tokenId,
-      "Category",
-      price,
-      {
-        value: listingPrice,
-      }
-    );
-    await transaction.wait();
-    router.push("/");
+      transaction = await contract.createMarketItem(
+        nftaddress,
+        tokenId,
+        price,
+        "Category",
+        {
+          value: listingPrice,
+        }
+      );
+      await transaction.wait();
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   const handleChange = (e) => {
@@ -114,6 +120,7 @@ export default function CreateItem() {
           placeholder="Asset Price in Eth"
           className="mt-2 border rounded p-4"
           name="price"
+          type="number"
           onChange={handleChange}
         />
         <input type="file" name="Asset" className="my-4" onChange={onChange} />
@@ -128,7 +135,8 @@ export default function CreateItem() {
         )}
         <button
           onClick={createMarket}
-          className="font-bold mt-4 bg-pink-500 text-white rounded p-4 shadow-lg"
+          style={{ background: "linear-gradient(#123904,#acb231)" }}
+          className="font-bold mt-4 text-white rounded p-4 shadow-lg"
         >
           Create Digital Asset
         </button>
