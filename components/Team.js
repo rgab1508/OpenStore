@@ -23,6 +23,7 @@ export default function Team() {
                 className="hover-effect-zoom"
                 src="https://avatars.githubusercontent.com/u/61423235?s=460&u=7ef56fda424474b260d3f88a0a07ae6da385953b&v=4"
                 alt="Aakash"
+                loading="lazy"
               />
             </div>
             <div className="bottom mb-3">
@@ -36,10 +37,11 @@ export default function Team() {
             <div className="top-image">
               <Image
                 className="hover-effect-zoom"
+                height="200px"
+                width="200px"
                 src="https://res.cloudinary.com/dnv3ztqf1/image/upload/v1605641201/ASA%20Blog/shreya_d3we6x.png"
-                alt=""
-                height="100%"
-                width="100%"
+                alt="Shreya"
+                loading="lazy"
               />
             </div>
             <div className="bottom mb-3">
@@ -56,7 +58,8 @@ export default function Team() {
                 height="200px"
                 className="hover-effect-zoom"
                 src="https://media-exp1.licdn.com/dms/image/C4E03AQEIuFmsjPkuZA/profile-displayphoto-shrink_400_400/0/1604657565624?e=1637798400&v=beta&t=mm2QtE7Iftsp4T0d4LWAM2Wf_0-LQ1AbWRDGwlorSK0"
-                alt="akshata"
+                alt="Akshata"
+                loading="lazy"
               />
             </div>
             <div className="bottom mb-3">
@@ -75,7 +78,8 @@ export default function Team() {
                 height="200px"
                 className="hover-effect-zoom"
                 src="https://media-exp1.licdn.com/dms/image/C4E03AQHXARWEpmiy8g/profile-displayphoto-shrink_400_400/0/1613926731454?e=1637798400&v=beta&t=OBsbasB6Ft0q-ufUj_l9d9fX_k4FF4ZYXRrioVV6tTI"
-                alt="aditya"
+                alt="Aditya"
+                loading="lazy"
               />
             </div>
             <div className="bottom mb-3">
@@ -92,7 +96,8 @@ export default function Team() {
                 height="200px"
                 className="hover-effect-zoom"
                 src="https://media-exp1.licdn.com/dms/image/C5103AQHjdEePAfnGXg/profile-displayphoto-shrink_400_400/0/1567694882465?e=1637798400&v=beta&t=lXR2e7Rsy68k18lMFKhS83_8TcbRxakLjyOLUwPDd8o"
-                alt="abhishek"
+                alt="Abhishek"
+                loading="lazy"
               />
             </div>
             <div className="bottom mb-3">
@@ -104,13 +109,14 @@ export default function Team() {
 
           <div className="col-md-4 my-3 text-center">
             <div className="top-image">
-              <Image
+              {/* <Image
                 width="200px"
                 height="200px"
                 className="hover-effect-zoom"
-                src="{% static '/Image/snehal.jpeg' %}"
+                src=""
                 alt="Snehal"
-              />
+                loading="lazy"
+              /> */}
             </div>
             <div className="bottom mb-3">
               <h5 className="text-center my-4">

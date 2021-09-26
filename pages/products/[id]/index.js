@@ -8,7 +8,7 @@ import Display from "../../../components/Display";
 
 import TopWaveFooter from "../../../components/TopWaveFooter";
 
-import Card from "../components/Card";
+import Card from "../../../components/Card";
 import Team from "../../../components/Team";
 import Itemview from "../../../components/ItemView";
 
@@ -22,7 +22,6 @@ export default function QuickView() {
       <Head>
         <title>Blockchain Based NFT Application</title>
         <meta name="description" content="Blockchain based NFT application" />
-        <link rel="icon" href="/favicon.png" />
 
         <link
           rel="stylesheet"

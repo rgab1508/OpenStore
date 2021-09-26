@@ -9,8 +9,8 @@ export default function Display() {
             <section id="right_below_navbar_svg">
               <Image
                 src="/assets/iphone.png"
-                height="100"
-                width="100"
+                loading="eager"
+                layout="fill"
                 alt="Iphone icon"
               />
             </section>

@@ -1,7 +1,10 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    loader: "cloudinary",
-    path: "res.cloudinary.com",
+    domains: [
+      "res.cloudinary.com",
+      "avatars.githubusercontent.com",
+      "media-exp1.licdn.com",
+    ],
   },
 };
