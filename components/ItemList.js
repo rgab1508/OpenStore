@@ -82,8 +82,9 @@ const ItemList = () => {
         value: price,
       }
     );
-    await transaction.wait();
-    getItems();
+    const tx = await transaction.wait();
+    console.log(tx);
+    getItems("All");
   };
 
   return (

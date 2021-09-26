@@ -17,7 +17,7 @@
     "cookie": "^0.4.1",
     "ethereum-waffle": "^3.4.0",
     "ethereumjs-util": "^7.1.0",
-    "ethers": "^5.4.7",
+    "ethers": "5.4.1",
     "hardhat": "^2.6.4",
     "ipfs-http-client": "50.1.2",
     "jsonwebtoken": "^8.5.1",
