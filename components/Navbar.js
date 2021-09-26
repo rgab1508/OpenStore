@@ -43,7 +43,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="link-background">
-              <Link href="/" className="nav-link left">
+              <Link href="/viewassets" className="nav-link left">
                 View your assets
               </Link>
             </li>
