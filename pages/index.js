@@ -14,6 +14,7 @@ import ItemView from "../components/ItemView.js";
 
 import WaveFooter from "../components/WaveFooter.js";
 import Footer from "../components/Footer.js";
+import ItemList from "../components/ItemList.js";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
             <b>Products</b>
           </h1>
           <Card />
+          <ItemList />
         </div>
         <Team />
       </main>
