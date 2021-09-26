@@ -56,7 +56,10 @@ contract NFTMarket is ReentrancyGuard {
         string calldata category
     ) public payable nonReentrant {
         require(price > 0, "No item for free here");
-        require(msg.value == price, "Price must be same as listing price");
+        require(
+            msg.value == listingPrice,
+            "Price must be same as listing price"
+        );
 
         _itemIds.increment();
         uint256 itemId = _itemIds.current();
@@ -179,7 +182,8 @@ contract NFTMarket is ReentrancyGuard {
         for (uint256 i = 0; i < totalItemCount; i++) {
             if (
                 keccak256(abi.encodePacked(idToMarketItem[i + 1].category)) ==
-                keccak256(abi.encodePacked(category))
+                keccak256(abi.encodePacked(category)) &&
+                idToMarketItem[i + 1].owner == address(0)
             ) {
                 itemCount += 1;
             }
@@ -189,7 +193,8 @@ contract NFTMarket is ReentrancyGuard {
         for (uint256 i = 0; i < totalItemCount; i++) {
             if (
                 keccak256(abi.encodePacked(idToMarketItem[i + 1].category)) ==
-                keccak256(abi.encodePacked(category))
+                keccak256(abi.encodePacked(category)) &&
+                idToMarketItem[i + 1].owner == address(0)
             ) {
                 uint256 currentId = idToMarketItem[i + 1].itemId;
                 MarketItem storage currentItem = idToMarketItem[currentId];

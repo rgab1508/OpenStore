@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Team() {
   return (
-    <div className="background-black">
+    <div className="background-black" style={{ minHeight: "70vh" }}>
       <div className="container">
         <div className="title">
           <br />
@@ -109,14 +109,14 @@ export default function Team() {
 
           <div className="col-md-4 my-3 text-center">
             <div className="top-image">
-              {/* <Image
+              <Image
                 width="200px"
                 height="200px"
                 className="hover-effect-zoom"
-                src=""
-                alt="Snehal"
+                src="https://avatars.githubusercontent.com/u/29654240?v=4"
+                alt="Gabriel"
                 loading="lazy"
-              /> */}
+              />
             </div>
             <div className="bottom mb-3">
               <h5 className="text-center my-4">

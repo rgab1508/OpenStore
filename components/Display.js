@@ -20,11 +20,11 @@ export default function Display() {
               <h1 className="title-main">
                 <b>Open Store</b>
               </h1>
-              <h4 className="mt-2">An Online Blockchain NFT Marketplace which prevents duplicate assets.</h4>
-              <a
-                href="https://drive.google.com/file/d/1s0fR01gzzSZWUYPv0AUNO_x1s8xRQ6Es/view?usp=sharing"
-                target="blank"
-              >
+              <h4 className="mt-2">
+                An Online Blockchain NFT Marketplace which prevents duplicate
+                assets.
+              </h4>
+              <a href="" target="blank">
                 <button
                   className=" flex-row-reverse mt-3 px-5 text-center"
                   id="commonbuttons"

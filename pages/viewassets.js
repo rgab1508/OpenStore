@@ -18,15 +18,15 @@ export default function Home() {
         <title>Blockchain Based NFT Application</title>
         <meta name="description" content="Blockchain based NFT application" />
       </Head>
-      <Display />
-      <TopWaveFooter />
-      <main style={{ marginTop: "30px", marginBottom: "50px" }}>
+      <main
+        style={{ marginTop: "30px", marginBottom: "50px", minHeight: "70vh" }}
+      >
         <div className="container">
           <h1
             className="title-main text-center"
             style={{ marginBottom: "30px", fontWeight: "bold" }}
           >
-            Products
+            Your assets
           </h1>
           <OwnAssestList />
         </div>
@@ -35,7 +35,6 @@ export default function Home() {
       <footer>
         <WaveFooter />
         <Footer />
-        
       </footer>
     </div>
   );

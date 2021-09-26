@@ -1,3 +1,4 @@
+// eslint-disable-next-line @next/next/no-img-element
 import Image from "next/image";
 
 export default function TopWaveFooter() {

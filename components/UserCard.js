@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Card({ data, key }) {
   return (
-    <div key={key} className=" col-md-4">
+    <div key={key} className=" mb-5 col-md-4">
       <div className="card shadow margin-56">
         <Image
           className="card-img-top"

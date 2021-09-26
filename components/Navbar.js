@@ -33,23 +33,27 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="link-background">
-              <Link href="/create" className="nav-link left">
-                Create NFT
+              <Link passHref={true} href="/create" className="nav-link left">
+                <a className="nav-link left">Create NFT</a>
               </Link>
             </li>
             <li className="link-background">
-              <Link href="/about" className="nav-link left">
-                About Us
+              <Link
+                passHref={true}
+                href="/viewassets"
+                className="nav-link left"
+              >
+                <a className={"nav-link left"}>View your assets</a>
               </Link>
             </li>
             <li className="link-background">
-              <Link href="/viewassets" className="nav-link left">
-                View your assets
+              <Link passHref={true} href="/creator-dashboard">
+                <a className="nav-link left">Dashboard</a>
               </Link>
             </li>
             <li className="link-background">
-              <Link href="/viewassets" className="nav-link left">
-                Dashboard
+              <Link passHref={true} href="/about" className="nav-link left">
+                <a className={"nav-link left"}> About Us</a>
               </Link>
             </li>
           </ul>

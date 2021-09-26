@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Card({ data, buyNft, key }) {
   return (
-    <div key={key} className=" col-md-4">
+    <div key={key} className="mb-5 col-md-4">
       <div className="card shadow margin-56">
         <Image
           className="card-img-top"
@@ -19,13 +19,6 @@ export default function Card({ data, buyNft, key }) {
             {data.price} <b>ETH</b>
           </h5>
           <div className="row">
-            <div className="col-6">
-              <span id="divpr{{i.id}}" className="divpr">
-                <button id="pr{{i.id}}" className="commonbuttons cart">
-                  Add To Cart
-                </button>
-              </span>
-            </div>
             <div className="col-6">
               <button
                 onClick={() => buyNft(data)}

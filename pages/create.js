@@ -39,8 +39,8 @@ export default function CreateItem() {
     }
   }
   async function createMarket() {
-    const { name, description, price, fileUrl } = values;
-    if (!name || !description || !price || !fileUrl) return;
+    const { name, description, price, fileUrl, category } = values;
+    if (!name || !description || !price || !fileUrl || !category) return;
     /* first, upload to IPFS */
     const data = JSON.stringify({
       name,
@@ -185,16 +185,21 @@ export default function CreateItem() {
                     />
                   </li>
                 </ul>
-                {values.fileUrl && (
-                  <Image
-                    src={values.fileUrl}
-                    height="350"
-                    width="350"
-                    alt="Product image"
-                  />
-                )}
+                <div style={{ width: "100%" }}>
+                  <div className="text-center">
+                    {values.fileUrl && (
+                      <Image
+                        src={values.fileUrl}
+                        height="350"
+                        width="350"
+                        alt="Product image"
+                      />
+                    )}
+                  </div>
+                </div>
                 <label htmlFor="category">Category:</label>{" "}
                 <select name="category" id="category" onChange={handleChange}>
+                  <option value="">Select a category</option>
                   <option value="Art">Art</option>
                   <option value="Graphics">Graphics</option>
                   <option value="Others">Others</option>
