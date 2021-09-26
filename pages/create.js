@@ -176,7 +176,7 @@ export default function CreateItem() {
                       type="file"
                       accept="image/*"
                       name="Asset"
-                      classNameName="my-4"
+                      className="my-4"
                     />
                   </li>
                 </ul>
