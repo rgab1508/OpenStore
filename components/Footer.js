@@ -10,7 +10,7 @@ export default function Footer() {
               <b>About Us</b>
             </h3>
             <p className="text-justify about_footer">
-              E COMMERCE BASED ON BLOCKCHAIN NFT
+              Blockchain NFT Marketplace
             </p>
             <a href="/shop/about/">
               <button id="commonbuttons">
