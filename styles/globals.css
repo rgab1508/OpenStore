@@ -596,3 +596,7 @@ span::first-letter { font-size: 60%; } */
 .small-text {
   font-size: 20px;
 }
+
+.flex {
+  flex-direction: column;
+}

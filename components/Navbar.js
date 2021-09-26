@@ -1,12 +1,13 @@
 // import styles from "../styles/navbar.module.css";
 // import { Image } from "@chakra-ui/image";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg sticky-top ">
       <div className="container">
-        <a className="navbar-brand" href="/shop">
+        <Link passHref={true} href="/" className="navbar-brand">
           <div id="leftlogo">
             <Image
               src="/assets/navbarlogo.svg"
@@ -17,7 +18,7 @@ export default function Navbar() {
               height="100"
             />
           </div>
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -32,24 +33,24 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
             <li className="link-background">
-              <a href="/shop/contact" className="nav-link left">
-                Contact Us
-              </a>
+              <Link href="/create" className="nav-link left">
+                Create NFT
+              </Link>
             </li>
             <li className="link-background">
-              <a href="/shop/about" className="nav-link left">
+              <Link href="/" className="nav-link left">
                 About Us
-              </a>
+              </Link>
             </li>
             <li className="link-background">
-              <a href="/shop/tracker" className="nav-link left">
+              <Link href="/" className="nav-link left">
                 Tracker
-              </a>
+              </Link>
             </li>
             <li className="link-background">
-              <a href="/blog" className="nav-link left">
+              <Link href="/" className="nav-link left">
                 Blog
-              </a>
+              </Link>
             </li>
 
             <li className="link-background">
