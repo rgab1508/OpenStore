@@ -22,7 +22,7 @@ export default function CreateItem() {
     name: "",
     category: "",
     fileUrl: null,
-    desc: "",
+    description: "",
   });
   const router = useRouter();
 
@@ -39,12 +39,12 @@ export default function CreateItem() {
     }
   }
   async function createMarket() {
-    const { name, desc, price, fileUrl } = values;
-    if (!name || !desc || !price || !fileUrl) return;
+    const { name, description, price, fileUrl } = values;
+    if (!name || !description || !price || !fileUrl) return;
     /* first, upload to IPFS */
     const data = JSON.stringify({
       name,
-      desc,
+      description,
       image: fileUrl,
     });
     try {
@@ -155,7 +155,7 @@ export default function CreateItem() {
                     <label htmlFor="id_description">Asset Description</label>{" "}
                     <textarea
                       type="text"
-                      name="desc"
+                      name="description"
                       style={{ height: "20vh", resize: "none" }}
                       maxLength="500"
                       placeholder="Describe your asset in 500 or less characters"

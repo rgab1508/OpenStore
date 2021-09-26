@@ -1,3 +1,6 @@
+/* html,
+body {
+  padding: 0;
 /*   ? FROM HERE ALL THE COMMON CHANGES
 ------------------------------------*/
 * {
@@ -59,6 +62,29 @@ svg {
 
 /**imp feature hai ye*/
 i:hover {
+    transform: scale(1.1);
+    opacity: 0.6;
+}
+
+svg:hover {
+    transform: scale(1.1);
+    opacity: 0.6;
+}
+
+h3 {
+    padding: 2% 2% 2% 2%;
+}
+
+h4 {
+    padding: 2% 0% 2% 0%;
+}
+
+h5 {
+    padding: 0% 0% 2% 0%;
+}
+
+.box-description {
+    background-color: #e3f3ee;
   transform: scale(1.1);
   opacity: 0.6;
 }
@@ -86,6 +112,43 @@ h5 {
 
 /*todo Navbar contents from here*/
 .navbar-nav li {
+    padding: 0 10px;
+}
+
+.navbar-nav li a {
+    text-align: right;
+    color: #fff;
+    font-size: large;
+    font-weight: 600;
+}
+
+.navbar {
+    background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
+}
+
+#leftlogo img {
+    width: 200px;
+    height: 70px;
+}
+
+@media only screen and (max-width: 600px) {
+    #leftlogo img {
+        width: 100px;
+        height: 35px;
+    }
+}
+
+.navbar-toggler {
+    background-color: #0ee3ff !important;
+    border: none !important;
+}
+
+#navbar-toggler-icon {
+    color: black;
+}
+
+.col-sm-2 svg {
+    align-items: center;
   padding: 0 10px;
 }
 
@@ -149,164 +212,153 @@ a.left:hover:before {
 
 /* **for the link with highlight for he particular page*/
 a.highlight {
-  color: white !important;
+    color: white !important;
 }
 
 /*
- ! Navbar contents end from here
+! Navbar contents end from here
 */
 /** the written stuff below navbar*/
 .box-for-names {
-  margin: 10% 3% 10% 3%;
-  padding: 5%;
+    margin: 10% 3% 10% 3%;
+    padding: 5%;
 }
 
 .below-navbar-container {
-  background: -webkit-linear-gradient(right, #0072ff, #00c6ff);
+    background: -webkit-linear-gradient(right, #0072ff, #00c6ff);
 }
 
 #commonbuttons {
-  padding: 2%;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 18px;
-  background: -webkit-linear-gradient(right, #754888, #220031);
-  width: 200px;
-  transition: all 0.3s ease-in;
-  border: none;
-}
-
-.commonbutton5 {
-  padding: 2%;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 18px;
-  background: -webkit-linear-gradient(right, #754888, #220031);
-  transition: all 0.3s ease-in;
-  border: none;
+    padding: 2%;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    background: -webkit-linear-gradient(right, #754888, #220031);
+    width: 200px;
+    transition: all 0.3s ease-in;
+    border: none;
 }
 
 #commonbuttons:hover {
-  padding: 2%;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 18px;
-  background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
-  width: 200px;
-  border-block-style: none;
-  border: none;
-  transform: scale(1.05);
+    padding: 2%;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
+    width: 200px;
+    border-block-style: none;
+    border: none;
+    transform: scale(1.05);
 }
 
 .commonbuttons {
-  padding: 2%;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 18px;
-  background: -webkit-linear-gradient(right, #754888, #220031);
-  width: 130px;
-  transition: all 0.3s ease-in;
-  border: none;
+    padding: 2%;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    background: -webkit-linear-gradient(right, #754888, #220031);
+    width: 130px;
+    transition: all 0.3s ease-in;
+    border: none;
 }
 
 .commonbuttons:hover {
-  padding: 2%;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 18px;
-  background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
-  width: 130px;
-  border-block-style: none;
-  border: none;
-  transform: scale(1.05);
+    padding: 2%;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
+    width: 130px;
+    border-block-style: none;
+    border: none;
+    transform: scale(1.05);
 }
 
 #commonbutton {
-  padding: 2%;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 18px;
-  background: -webkit-linear-gradient(right, #754888, #220031);
-  width: 200px;
-  transition: all 0.3s ease-in;
-  border: none;
+    padding: 2%;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    background: -webkit-linear-gradient(right, #754888, #220031);
+    width: 200px;
+    transition: all 0.3s ease-in;
+    border: none;
 }
 
 #commonbutton:hover {
-  padding: 2%;
-  border: none;
-  border-radius: 25px;
-  color: white;
-  font-size: 18px;
-  background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
-  width: 200px;
-  border-block-style: none;
-  border: none;
-  transform: scale(1.05);
+    padding: 2%;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 18px;
+    background: -webkit-linear-gradient(left, #1a129f, #6156f9e3);
+    width: 200px;
+    border-block-style: none;
+    border: none;
+    transform: scale(1.05);
 }
 
 /*
-    todo below the navbar right side svg
+todo below the navbar right side svg
 */
 #right_below_navbar_svg img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 #hello-world h1 {
-  color: #fff;
-  font-size: 70px;
+    color: #fff;
+    font-size: 70px;
 }
 
 #hello-world h4 {
-  color: white;
-  font-size: 30px;
-  font-weight: 500;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
 }
 
 @media only screen and (max-width: 991px) {
-  #hello-world h1 {
-    color: #fff;
-    font-size: 50px;
-  }
+    #hello-world h1 {
+        color: #fff;
+        font-size: 50px;
+    }
 
-  #hello-world h4 {
-    color: white;
-    font-size: 25px;
-    font-weight: 500;
-  }
+    #hello-world h4 {
+        color: white;
+        font-size: 25px;
+        font-weight: 500;
+    }
 }
 
 @media only screen and (max-width: 1233px) {
-  #hello-world h1 {
-    color: #fff;
-    font-size: 60px;
-  }
+    #hello-world h1 {
+        color: #fff;
+        font-size: 60px;
+    }
 
-  #hello-world h4 {
-    color: white;
-    font-size: 30px;
-    font-weight: 500;
-  }
+    #hello-world h4 {
+        color: white;
+        font-size: 30px;
+        font-weight: 500;
+    }
 }
 
 @media only screen and (max-width: 600px) {
-  #hello-world h1 {
-    color: #fff;
-    font-size: 50px;
-  }
+    #hello-world h1 {
+        color: #fff;
+        font-size: 50px;
+    }
 
-  #hello-world h4 {
-    color: white;
-    font-size: 30px;
-    font-weight: 500;
-  }
+    #hello-world h4 {
+        color: white;
+        font-size: 30px;
+        font-weight: 500;
+    }
 }
 
 /**the Computer the Svg and banner*/
@@ -444,12 +496,12 @@ display ka css
 
 */
 #right_below_navbar_svg img {
-  width: 100%;
-  height: 400px;
+width: 100%;
+height: 400px;
 }
 .box-for-names {
-  margin: 10% 3% 10% 3%;
-  padding: 5%;
+margin: 10% 3% 10% 3%;
+padding: 5%;
 }
 .below-navbar-container {
   background: -webkit-linear-gradient(left, #ff19f7, #6156f9e3);
@@ -461,32 +513,59 @@ display ka css
   border-radius: 50%;
 }
 /* .background-black{
-    background-color: #e7e7e7;
+background-color: #e7e7e7;
 } */
 
 /*
 itemview css
 */
 
-.item-info {
-  padding-top: 10%;
+
+
+/* image modal*/
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+border-radius: 5px;
+cursor: pointer;
+transition: 0.3s;
 }
 
-/*
-top right bottom left
-*/
-.slight-big {
-  padding: 5% 10% 5% 10%;
-  border-radius: 3px !important;
-  transform: none;
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+padding-top: 100px; /* Location of the box */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
-.slight-big:hover {
-  padding: 5% 10% 5% 10%;
+/* Modal Content (Image) */
+.modal-content {
+margin: auto;
+display: block;
+width: 80%;
+max-width: 700px;
 }
 
-.small-font {
-  font-size: 15px;
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+margin: auto;
+display: block;
+width: 80%;
+max-width: 700px;
+text-align: center;
+color: #ccc;
+padding: 10px 0;
+height: 150px;
 }
 /* span { 
    font-size: 3em; 
