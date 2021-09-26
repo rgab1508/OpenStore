@@ -52,20 +52,6 @@ export default function Navbar() {
                 Dashboard
               </Link>
             </li>
-
-            <li className="link-background">
-              <a
-                className="nav-link"
-                id="popcart"
-                data-html="true"
-                data-container="body"
-                data-toggle="popover"
-                data-placement="bottom"
-                data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-              >
-                <i className="fa fa-shopping-cart"></i> <span id="cart">0</span>
-              </a>
-            </li>
           </ul>
         </div>
       </div>
