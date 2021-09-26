@@ -1,9 +1,13 @@
 import { useState } from "react";
 import { ethers } from "ethers";
 import { create as ipfsHttpClient } from "ipfs-http-client";
+import WaveFooter from "../components/WaveFooter";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Web3Modal from "web3modal";
+import Script from "next/script";
+import Head from "next/head";
+import Footer from "../components/Footer";
 
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
@@ -102,45 +106,120 @@ export default function CreateItem() {
   };
 
   return (
-    <div className="flex justify-center">
-      <div className="w-1/2 flex flex-col pb-12">
-        <input
-          placeholder="Asset Name"
-          className="mt-8 border rounded p-4"
-          name="name"
-          onChange={handleChange}
-        />
-        <textarea
-          placeholder="Asset Description"
-          className="mt-2 border rounded p-4"
-          name="desc"
-          onChange={handleChange}
-        />
-        <input
-          placeholder="Asset Price in Eth"
-          className="mt-2 border rounded p-4"
-          name="price"
-          type="number"
-          onChange={handleChange}
-        />
-        <input type="file" name="Asset" className="my-4" onChange={onChange} />
-        {values.fileUrl && (
-          <img
-            className="rounded mt-4"
-            height="350"
-            alt="product Image"
-            width="350"
-            src={values.fileUrl}
-          />
-        )}
-        <button
-          onClick={createMarket}
-          style={{ background: "linear-gradient(#123904,#acb231)" }}
-          className="font-bold mt-4 text-white rounded p-4 shadow-lg"
-        >
-          Create Digital Asset
-        </button>
-      </div>
+    <div>
+      <Script src="https://kit.fontawesome.com/a076d05399.js" />
+      <Head>
+        <title>Create Asset</title>
+      </Head>
+
+      <main>
+        <h1 className="text-center my-5 header display-4">Create Asset</h1>
+
+        <div style={{ marginBottom: "50px" }} className="container ">
+          <div className="row ">
+            <div
+              className="col-sm-6 block-to-disappear-in-mobile "
+              style={{ padding: "30px" }}
+            >
+              <Image
+                src="https://res.cloudinary.com/dnv3ztqf1/image/upload/v1632635884/devathon/create-asset_nvz7xi.svg"
+                layout="fill"
+                alt="image htmlFor add doctor"
+              />
+            </div>
+            <div className="col-sm-6">
+              <for action="/adddoctor" method="POST" className="form-group">
+                <input
+                  type="hidden"
+                  name="csrfmiddlewaretoken"
+                  value="fIwiR9rbZTmvxfmW8gC8CiS93Zx36iAh0kdWjuhKGglTMld96xGITqBEbdBR4EkY"
+                />
+                <ul className="unordered-list">
+                  <li>
+                    <label htmlFor="id_name">Asset Name:</label>{" "}
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Asset Name"
+                      maxLength="500"
+                      required
+                      onChange={handleChange}
+                      id="id_name"
+                    />
+                  </li>
+                  <li>
+                    <label htmlFor="id_description">Asset Description</label>{" "}
+                    <textarea
+                      type="text"
+                      name="desc"
+                      style={{ height: "20vh", resize: "none" }}
+                      maxLength="500"
+                      placeholder="Describe your asset in 500 or less characters"
+                      required
+                      onChange={handleChange}
+                      id="id_description"
+                    />
+                  </li>
+                  <li>
+                    <label htmlFor="id_price_in_eth">Asset price in ETH:</label>{" "}
+                    <input
+                      type="number"
+                      name="price"
+                      required
+                      onChange={handleChange}
+                      id="id_price_in_eth"
+                    />
+                  </li>
+                  <li>
+                    <label htmlFor="id_image">Asset Image:</label>{" "}
+                    <input
+                      type="file"
+                      accept="image/*"
+                      name="Asset"
+                      classNameName="my-4"
+                    />
+                  </li>
+                </ul>
+                {values.fileUrl && (
+                  <Image
+                    src={values.fileUrl}
+                    height="350"
+                    width="350"
+                    alt="Product image"
+                  />
+                )}
+
+                <button
+                  onClick={createSale}
+                  className="btn btn-block commonbutton5"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </for>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <WaveFooter />
+        <Footer />
+        <Script
+          src="https://code.jquery.com/jquery-3.3.1.js"
+          integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+          crossOrigin="anonymous"
+        ></Script>
+        <Script
+          src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+          integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+          crossOrigin="anonymous"
+        ></Script>
+        <Script
+          src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+          integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+          crossOrigin="anonymous"
+        ></Script>
+      </footer>
     </div>
   );
 }
