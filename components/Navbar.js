@@ -47,6 +47,11 @@ export default function Navbar() {
                 View your assets
               </Link>
             </li>
+            <li className="link-background">
+              <Link href="/viewassets" className="nav-link left">
+                Dashboard
+              </Link>
+            </li>
 
             <li className="link-background">
               <a
