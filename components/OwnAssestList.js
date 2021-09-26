@@ -1,7 +1,7 @@
 import React from "react";
 import Web3Modal from "web3modal";
 import { nftaddress, nftmarketaddress } from "../config";
-import Card from "./Card";
+import UserCard from "./UserCard";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import NFTMarket from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 import { useEffect, useState } from "react";
@@ -67,7 +67,8 @@ const ItemList = () => {
         flexWrap: "wrap",
       }}
     >
-      {items.length && items.map((item, key) => <Card key={key} data={item} />)}
+      {items.length &&
+        items.map((item, key) => <UserCard key={key} data={item} />)}
     </div>
   );
 };
