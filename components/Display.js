@@ -8,7 +8,7 @@ export default function Display() {
           <div className="col-md-6 text-center vanish-mobile">
             <section id="right_below_navbar_svg">
               <Image
-                src="/assets/iphone.png"
+                src="/assets/marketplace.svg"
                 loading="eager"
                 layout="fill"
                 alt="Iphone icon"
@@ -18,9 +18,9 @@ export default function Display() {
           <div className="col-md-6">
             <div className="box-for-names" id="hello-world">
               <h1 className="title-main">
-                <b>IPhone</b>
+                <b>Open Store</b>
               </h1>
-              <h4 className="mt-2">DEDSO rupya dega</h4>
+              <h4 className="mt-2">An Online Blockchain NFT Marketplace which prevents duplicate assets.</h4>
               <a
                 href="https://drive.google.com/file/d/1s0fR01gzzSZWUYPv0AUNO_x1s8xRQ6Es/view?usp=sharing"
                 target="blank"
@@ -29,7 +29,7 @@ export default function Display() {
                   className=" flex-row-reverse mt-3 px-5 text-center"
                   id="commonbuttons"
                 >
-                  <b>Buy</b>
+                  <b>View Demo</b>
                 </button>
               </a>
             </div>
