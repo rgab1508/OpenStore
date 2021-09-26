@@ -1,4 +1,6 @@
-/* pages/create-item.js */
+import Head from 'next/head'
+import Image from 'next/image'
+
 import { useState } from 'react'
 import { ethers } from 'ethers'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
@@ -14,12 +16,17 @@ import {
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import Market from '../artifacts/contracts/NFTMarket.sol/NFTMarket.json'
 
-export default function CreateItem() {
+export default function Home() {
+  console.log('in fuction create item')
   const [fileUrl, setFileUrl] = useState(null)
   const [formInput, updateFormInput] = useState({ price: '', name: '', description: '' })
   const router = useRouter()
+  console.log("out of create item")
+    // const {name,description,price}=formInput
+    // if(!name || !description || !price || !fileUrl) return
 
   async function onChange(e) {
+    console.log("on change")
     const file = e.target.files[0]
     try {
       const added = await client.add(
@@ -30,12 +37,13 @@ export default function CreateItem() {
       )
       const url = `https://ipfs.infura.io/ipfs/${added.path}`
       setFileUrl(url)
+      
     } catch (error) {
       console.log('Error uploading file: ', error)
     }  
   }
-  
   async function createMarket() {
+    console.log("create market")
     const { name, description, price } = formInput
     if (!name || !description || !price || !fileUrl) return
     /* first, upload to IPFS */
@@ -53,6 +61,7 @@ export default function CreateItem() {
   }
 
   async function createSale(url) {
+    console.log('in function create sale')
     const web3Modal = new Web3Modal()
     const connection = await web3Modal.connect()
     const provider = new ethers.providers.Web3Provider(connection)    
@@ -65,6 +74,7 @@ export default function CreateItem() {
     let event = tx.events[0]
     let value = event.args[2]
     let tokenId = value.toNumber()
+
     const price = ethers.utils.parseUnits(formInput.price, 'ether')
   
     /* then list the item for sale on the marketplace */
@@ -78,38 +88,45 @@ export default function CreateItem() {
   }
 
   return (
-    <div className="flex justify-center">
-      <div className="w-1/2 flex flex-col pb-12">
-        <input 
-          placeholder="Asset Name"
-          className="mt-8 border rounded p-4"
-          onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
-        />
-        <textarea
-          placeholder="Asset Description"
-          className="mt-2 border rounded p-4"
-          onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
-        />
-        <input
-          placeholder="Asset Price in Eth"
-          className="mt-2 border rounded p-4"
-          onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
-        />
-        <input
-          type="file"
-          name="Asset"
-          className="my-4"
-          onChange={onChange}
-        />
-        {
-          fileUrl && (
-            <img className="rounded mt-4" width="350" src={fileUrl} />
-          )
-        }
-        <button onClick={createMarket} className="font-bold mt-4 bg-pink-500 text-white rounded p-4 shadow-lg">
-          Create Digital Asset
-        </button>
-      </div>
+    // <div className="flex justify-center">
+    //   <div className="w-1/2 flex flex-col pb-12">
+    //     <input 
+    //       placeholder="Asset Name"
+    //       className="mt-8 border rounded p-4"
+    //       onChange={e => updateFormInput({ ...formInput, name: e.target.value })}
+    //     />
+    //     <textarea
+    //       placeholder="Asset Description"
+    //       className="mt-2 border rounded p-4"
+    //       onChange={e => updateFormInput({ ...formInput, description: e.target.value })}
+    //     />
+    //     <input
+    //       placeholder="Asset Price in Eth"
+    //       className="mt-2 border rounded p-4"
+    //       onChange={e => updateFormInput({ ...formInput, price: e.target.value })}
+    //     />
+    //     <input
+    //       type="file"
+    //       name="Asset"
+    //       className="my-4"
+    //       onChange={onChange}
+    //     />
+    //     {
+    //       fileUrl && (
+    //         <img className="rounded mt-4" width="350" src={fileUrl} />
+    //       )
+    //     }
+    //     <button onClick={createMarket} 
+    //       className="font-bold mt-4 bg-pink-500 text-white rounded p-4 shadow-lg">
+    //       Create Digital Asset
+    //     </button>
+    //   </div>
+    // </div>
+    <Head>
+       <div>
+      <h2>hello</h2>
     </div>
+      </Head>
+   
   )
 }

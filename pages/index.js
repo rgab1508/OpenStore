@@ -1,4 +1,3 @@
-/* pages/index.js */
 import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -9,26 +8,20 @@ import {
 } from '../config'
 
 import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
-import Market from '../artifacts/contracts/NFTMarket.sol/NFTMarket.json'
+import NFTMarket from '../artifacts/contracts/NFTMarket.sol/NFTMarket.json'
 
 export default function Home() {
-  
   const [nfts, setNfts] = useState([])
   const [loadingState, setLoadingState] = useState('not-loaded')
   useEffect(() => {
     loadNFTs()
-  },[])
-  async function loadNFTs() {
-    /* create a generic provider and query for unsold market items */
+  }, [])
+  async function loadNFTs() {    
     const provider = new ethers.providers.JsonRpcProvider()
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
-    const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
-    const data = await marketContract.getMarketItems()
+    const marketContract = new ethers.Contract(nftmarketaddress, NFTMarket.abi, provider)
+    const data = await marketContract.fetchMarketItems()
     
-    /*
-    *  map over items returned from smart contract and format 
-    *  them as well as fetch their token metadata
-    */
     const items = await Promise.all(data.map(async i => {
       const tokenUri = await tokenContract.tokenURI(i.tokenId)
       const meta = await axios.get(tokenUri)
@@ -48,15 +41,13 @@ export default function Home() {
     setLoadingState('loaded') 
   }
   async function buyNft(nft) {
-    /* needs the user to sign the transaction, so will use Web3Provider and sign it */
     const web3Modal = new Web3Modal()
     const connection = await web3Modal.connect()
     const provider = new ethers.providers.Web3Provider(connection)
     const signer = provider.getSigner()
-    const contract = new ethers.Contract(nftmarketaddress, Market.abi, signer)
+    const contract = new ethers.Contract(nftmarketaddress, NFTMarket.abi, signer)
 
-    /* user will be prompted to pay the asking proces to complete the transaction */
-    const price = ethers.utils.parseUnits(nft.price.toString(), 'ether')   
+    const price = ethers.utils.parseUnits(nft.price.toString(), 'ether')
     const transaction = await contract.createMarketSale(nftaddress, nft.tokenId, {
       value: price
     })
