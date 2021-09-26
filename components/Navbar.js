@@ -10,7 +10,7 @@ export default function Navbar() {
         <Link passHref={true} href="/" className="navbar-brand">
           <div id="leftlogo">
             <Image
-              src="/assets/navbarlogo.svg"
+              src="/assets/navbar-logo-new.svg"
               alt="Navbar Logo"
               className="d-inline-block align-top"
               loading="lazy"

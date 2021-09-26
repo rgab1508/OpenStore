@@ -3,17 +3,17 @@ import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
 
-import Navbar from "../components/navbar.js";
-import Display from "../components/display.js";
+import Navbar from "../components/Navbar";
+import Display from "../components/Display";
 
-import TopWaveFooter from "../components/topwavefooter.js";
+import TopWaveFooter from "../components/TopWaveFooter";
 
-import Card from "../components/card.js";
-import Team from "../components/team.js";
-import ItemView from "../components/itemview.js";
+import Card from "../components/Card";
+import Team from "../components/Team";
+import ItemView from "../components/ItemView";
 
-import WaveFooter from "../components/wavefooter.js";
-import Footer from "../components/footer.js";
+import WaveFooter from "../components/WaveFooter";
+import Footer from "../components/Footer";
 
 export default function Createasset() {
   return (
