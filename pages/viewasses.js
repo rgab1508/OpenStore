@@ -8,6 +8,7 @@ import ItemView from "../components/ItemView.js";
 import WaveFooter from "../components/WaveFooter.js";
 import Footer from "../components/Footer.js";
 import ItemList from "../components/ItemList.js";
+import OwnAssestList from "../components/OwnAssestList";
 
 export default function Home() {
   return (
