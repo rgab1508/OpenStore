@@ -9,7 +9,6 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="description" content="Blockchain based NFT application" />
         <link rel="icon" href="/assets/favicon.png" />
-
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -19,7 +18,6 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap"
           rel="stylesheet"
         />
-
         <link
           rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
