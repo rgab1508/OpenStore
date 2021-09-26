@@ -19,7 +19,7 @@
     "ethereumjs-util": "^7.1.0",
     "ethers": "^5.4.7",
     "hardhat": "^2.6.4",
-    "ipfs-http-client": "^53.0.0",
+    "ipfs-http-client": "50.1.2",
     "jsonwebtoken": "^8.5.1",
     "next": "11.1.2",
     "pg": "^8.7.1",

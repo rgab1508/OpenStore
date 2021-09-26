@@ -1,17 +1,11 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import Head from "next/head";
-import Image from "next/image";
 import Script from "next/script";
-
-import Navbar from "../components/Navbar.js";
 import Display from "../components/Display.js";
-
 import TopWaveFooter from "../components/TopWaveFooter.js";
-
 import Card from "../components/Card.js";
 import Team from "../components/Team.js";
 import ItemView from "../components/ItemView.js";
-
 import WaveFooter from "../components/WaveFooter.js";
 import Footer from "../components/Footer.js";
 import ItemList from "../components/ItemList.js";
@@ -26,7 +20,7 @@ export default function Home() {
       </Head>
       <Display />
       <TopWaveFooter />
-      <main>
+      <main style={{ marginTop: "30px" }}>
         <div className="container">
           <h1 className="title-main text-center">
             <b>Products</b>
