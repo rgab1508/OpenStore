@@ -73,7 +73,7 @@ const ItemList = () => {
     await transaction.wait();
     getItems();
   };
-  return <div>hii</div>;
+  return <div></div>;
 };
 
 export default ItemList;

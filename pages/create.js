@@ -67,6 +67,7 @@ export default function CreateItem() {
     let tokenId = value.toNumber();
 
     const price = ethers.utils.parseUnits(values.price, "ether");
+    console.log(price);
 
     /* then list the item for sale on the marketplace */
     contract = new ethers.Contract(nftmarketaddress, NFTMarket.abi, signer);
@@ -118,7 +119,7 @@ export default function CreateItem() {
         />
         <input type="file" name="Asset" className="my-4" onChange={onChange} />
         {values.fileUrl && (
-          <Image
+          <img
             className="rounded mt-4"
             height="350"
             alt="product Image"
