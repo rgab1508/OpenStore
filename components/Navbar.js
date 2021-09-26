@@ -38,18 +38,13 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="link-background">
-              <Link href="/" className="nav-link left">
+              <Link href="/about" className="nav-link left">
                 About Us
               </Link>
             </li>
             <li className="link-background">
               <Link href="/" className="nav-link left">
-                Tracker
-              </Link>
-            </li>
-            <li className="link-background">
-              <Link href="/" className="nav-link left">
-                Blog
+                View your assets
               </Link>
             </li>
 

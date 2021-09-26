@@ -1,7 +1,7 @@
 import React from "react";
 import Web3Modal from "web3modal";
 import { nftaddress, nftmarketaddress } from "../config";
-
+import Card from "./Card";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import NFTMarket from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 import { useEffect, useState } from "react";
@@ -32,7 +32,7 @@ const ItemList = () => {
     let newItems = await Promise.all(
       data.map(async (d) => {
         const tokenUri = await tokenContract.tokenURI(d.tokenId);
-        const meta = axios(tokenUri);
+        const meta = await axios.get(tokenUri);
         const price = ethers.utils.formatUnits(d.price.toString(), "ether");
 
         return {
@@ -45,6 +45,7 @@ const ItemList = () => {
         };
       })
     );
+    console.log(newItems);
 
     setItems(newItems);
   };
@@ -73,7 +74,17 @@ const ItemList = () => {
     await transaction.wait();
     getItems();
   };
-  return <div></div>;
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        flexWrap: "wrap",
+      }}
+    >
+      {items.length && items.map((item, key) => <Card key={key} data={item} />)}
+    </div>
+  );
 };
 
 export default ItemList;
