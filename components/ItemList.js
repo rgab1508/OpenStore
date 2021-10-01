@@ -23,7 +23,9 @@ const ItemList = () => {
   }, [filterCategory]);
 
   const getItems = async (category) => {
-    const provider = new ethers.providers.JsonRpcProvider();
+    const provider = new ethers.providers.JsonRpcProvider(
+      "https://rpc-mumbai.matic.today"
+    );
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
     const marketContract = new ethers.Contract(
       nftmarketaddress,
