@@ -105,8 +105,6 @@ export default function CreateItem() {
     });
   };
 
-  useEffect(() => console.log(values), [values]);
-
   return (
     <div>
       <Script src="https://kit.fontawesome.com/a076d05399.js" />
