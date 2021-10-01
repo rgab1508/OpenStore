@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
-import { nftaddress, nftmarketaddress } from "../config";
+import { nftaddress, nftmarketaddress, projAddress } from "../config";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import NFTMarket from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 
@@ -57,7 +57,7 @@ export default function CreateItem() {
   }
 
   async function createSale(url) {
-    const web3Modal = new Web3Modal();
+    const web3Modal = new Web3Modal(projAddress);
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();

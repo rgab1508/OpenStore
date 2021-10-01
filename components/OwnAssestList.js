@@ -1,6 +1,6 @@
 import React from "react";
 import Web3Modal from "web3modal";
-import { nftaddress, nftmarketaddress } from "../config";
+import { nftaddress, nftmarketaddress, projAddress } from "../config";
 import UserCard from "./UserCard";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import NFTMarket from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
@@ -19,11 +19,7 @@ const ItemList = () => {
 
   const getItems = async () => {
     try {
-      const web3Modal = new Web3Modal({
-        network: "mumbai",
-        cacheProvider: true,
-      });
-
+      const web3Modal = new Web3Modal(projAddress);
       const connection = await web3Modal.connect();
       const provider = new ethers.providers.Web3Provider(connection);
       const signer = provider.getSigner();

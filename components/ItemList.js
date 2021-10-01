@@ -1,6 +1,6 @@
 import React from "react";
 import Web3Modal from "web3modal";
-import { nftaddress, nftmarketaddress } from "../config";
+import { nftaddress, nftmarketaddress, projAddress } from "../config";
 import Card from "./Card";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import NFTMarket from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
@@ -24,9 +24,7 @@ const ItemList = () => {
 
   const getItems = async (category) => {
     try {
-      const provider = new ethers.providers.JsonRpcProvider(
-        "https://polygon-mumbai.infura.io/v3/cfc0ba400dcf4a2ca14edff9f68620fd"
-      );
+      const provider = new ethers.providers.JsonRpcProvider(projAddress);
       await provider.ready;
       const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
       const marketContract = new ethers.Contract(
@@ -69,7 +67,7 @@ const ItemList = () => {
 
   const buyNft = async (nft) => {
     try {
-      const web3Modal = new Web3Modal();
+      const web3Modal = new Web3Modal(projAddress);
       const connection = await web3Modal.connect();
       const prov = new ethers.providers.Web3Provider(connection);
 
@@ -81,14 +79,15 @@ const ItemList = () => {
       );
 
       const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
-
+      console.log(price);
       const transaction = await contract.createMarketSale(
         nftaddress,
         nft.tokenId,
         {
-          value: price,
+          value: price.toString(),
         }
       );
+      console.log(transaction);
       const tx = await transaction.wait();
       console.log(tx);
       getItems("All");
