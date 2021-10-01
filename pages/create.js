@@ -62,20 +62,19 @@ export default function CreateItem() {
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
-    console.log(url);
 
     /* next, create the item */
     try {
       let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
       let transaction = await contract.createToken(url);
       let tx = await transaction.wait();
-      console.log(tx);
+      console.log("Transaction", tx);
       let event = tx.events[0];
       let value = event.args[2];
       let tokenId = value.toNumber();
-      console.log(values);
+      console.log("Values", values);
       const price = ethers.utils.parseUnits(values.price, "ether");
-      console.log(price.toString());
+      console.log("Price", price.toString());
 
       /* then list the item for sale on the marketplace */
       contract = new ethers.Contract(nftmarketaddress, NFTMarket.abi, signer);
