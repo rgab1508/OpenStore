@@ -25,7 +25,7 @@ const ItemList = () => {
   const getItems = async (category) => {
     try {
       const provider = new ethers.providers.JsonRpcProvider(
-        "https://rpc-mumbai.matic.today"
+        "https://polygon-mumbai.infura.io/v3/cfc0ba400dcf4a2ca14edff9f68620fd"
       );
       await provider.ready;
       const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
@@ -57,7 +57,9 @@ const ItemList = () => {
             description: meta.data.description,
           };
         })
-      );
+      ).catch((err) => {
+        console.log(err);
+      });
       console.log(newItems);
       setItems(newItems);
     } catch (error) {
