@@ -1,9 +1,37 @@
-// import styles from "../styles/navbar.module.css";
-// import { Image } from "@chakra-ui/image";
 import Image from "next/image";
 import Link from "next/link";
+import Web3Modal from "web3modal";
+import Web3 from "web3";
+import { projAddress } from "../config";
+import { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [connected, setConnected] = useState(false);
+
+  useEffect(() => {
+    checkConnection();
+  }, []);
+
+  async function checkConnection() {
+    let web3;
+    if (window.ethereum) {
+      web3 = new Web3(window.ethereum);
+    } else if (window.web3) {
+      web3 = new Web3(window.web3.currentProvider);
+    }
+    web3.eth.getAccounts().then((accounts) => {
+      if (accounts.length > 0) {
+        setConnected(true);
+      }
+    });
+  }
+
+  async function connectWallet() {
+    const web3Modal = new Web3Modal(projAddress);
+    const provider = await web3Modal.connect();
+    checkConnection();
+  }
+
   return (
     <nav className="navbar navbar-expand-lg sticky-top ">
       <div className="container">
@@ -56,6 +84,19 @@ export default function Navbar() {
                 <a className={"nav-link left"}> About Us</a>
               </Link>
             </li>
+            {!connected && (
+              <li
+                style={{
+                  borderRadius: "5px",
+                  color: "purple",
+                  backgroundColor: "purple",
+                }}
+              >
+                <a onClick={connectWallet} className={"nav-link left"}>
+                  Connect wallet
+                </a>
+              </li>
+            )}
           </ul>
         </div>
       </div>

@@ -212,10 +212,6 @@ export default function CreateItem() {
           </div>
         </div>
       </main>
-      <footer>
-        <WaveFooter />
-        <Footer />
-      </footer>
     </div>
   );
 }

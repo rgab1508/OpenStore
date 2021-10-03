@@ -24,6 +24,10 @@ export default function Display() {
                 An Online Blockchain NFT Marketplace which prevents duplicate
                 assets.
               </h4>
+              <h5 className="mt-2 text-white">
+                This is deployed on a testnet and the assets currently hold no
+                real value.
+              </h5>
               <a href="https://youtu.be/sHytyvUQB0Q" target="blank">
                 <button
                   className=" flex-row-reverse mt-3 px-5 text-center"

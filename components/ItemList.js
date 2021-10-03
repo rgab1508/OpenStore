@@ -38,7 +38,6 @@ const ItemList = () => {
       } else {
         data = await marketContract.getItemsByCategory(category);
       }
-      console.log(data);
       let newItems = await Promise.all(
         data.map(async (d) => {
           const tokenUri = await tokenContract.tokenURI(d.tokenId);
@@ -58,7 +57,6 @@ const ItemList = () => {
       ).catch((err) => {
         console.log(err);
       });
-      console.log(newItems);
       setItems(newItems);
     } catch (error) {
       console.log(error);
@@ -79,7 +77,6 @@ const ItemList = () => {
       );
 
       const price = ethers.utils.parseUnits(nft.price.toString(), "ether");
-      console.log(price);
       const transaction = await contract.createMarketSale(
         nftaddress,
         nft.tokenId,
