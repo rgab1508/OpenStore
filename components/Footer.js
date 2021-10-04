@@ -24,16 +24,16 @@ export default function Footer() {
             </h3>
             <ul className="footer-links">
               <li>
-                <a href="shop">Contact Us</a>
+                <a href="/create">Create NFT</a>
               </li>
               <li>
-                <a href="/shop/about/">About Us</a>
+                <a href="/viewassets">View Your Assets</a>
               </li>
               <li>
-                <a href="/shop/tracker">Tracker</a>
+                <a href="/creator-dashboard">Creator Dashboard</a>
               </li>
               <li>
-                <a href="/blog/">Blog</a>
+                <a href="/about">About Us</a>
               </li>
             </ul>
           </div>
