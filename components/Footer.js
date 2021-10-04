@@ -56,57 +56,11 @@ export default function Footer() {
               </li>
             </ul>
             <br />
-            <div className="container">
-              <div className="row">
-                <div className="col-sm-3">
-                  <a href="https://github.com/AakashCode12" target="blank">
-                    <i
-                      id="github"
-                      className="fa fa-3x fa-github"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-                <div className="col-sm-3">
-                  <a
-                    href="https://www.linkedin.com/in/aakash-yadav-a30627190/"
-                    target="blank"
-                  >
-                    <i
-                      id="linkedin"
-                      className="fa fa-3x fa-linkedin"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-                <div className="col-sm-3">
-                  <a
-                    href="https://www.instagram.com/aakash_igram/"
-                    target="blank"
-                  >
-                    <i
-                      id="instagram"
-                      className="fa fa-3x fa-instagram"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-                <div className="col-sm-3">
-                  <a href="https://twitter.com/Aakashv0007" target="blank">
-                    <i
-                      id="twitter"
-                      className="fa fa-3x fa-twitter"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
+        <br />
+        <br />
       </div>
-      <br />
-      <br />
-    </div>
-  );
+      );
 }
