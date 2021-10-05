@@ -54,6 +54,11 @@ export default function Footer() {
                   TABLE
                 </a>
               </li>
+              <li>
+                <a href="https://github.com/rgab1508/OpenStore">
+                  <i className="fa fa-2x fa-github" aria-hidden="true"></i> Github Repository
+                </a>
+              </li>
             </ul>
             <br />
 
