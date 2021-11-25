@@ -24,16 +24,16 @@ export default function Footer() {
             </h3>
             <ul className="footer-links">
               <li>
-                <a href="shop">Contact Us</a>
+                <a href="/create">Create NFT</a>
               </li>
               <li>
-                <a href="/shop/about/">About Us</a>
+                <a href="/viewassets">View Your Assets</a>
               </li>
               <li>
-                <a href="/shop/tracker">Tracker</a>
+                <a href="/creator-dashboard">Creator Dashboard</a>
               </li>
               <li>
-                <a href="/blog/">Blog</a>
+                <a href="/about">About Us</a>
               </li>
             </ul>
           </div>
@@ -54,59 +54,18 @@ export default function Footer() {
                   TABLE
                 </a>
               </li>
+              <li>
+                <a href="https://github.com/rgab1508/OpenStore">
+                  <i className="fa fa-2x fa-github" aria-hidden="true"></i> Github Repository
+                </a>
+              </li>
             </ul>
             <br />
-            <div className="container">
-              <div className="row">
-                <div className="col-sm-3">
-                  <a href="https://github.com/AakashCode12" target="blank">
-                    <i
-                      id="github"
-                      className="fa fa-3x fa-github"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-                <div className="col-sm-3">
-                  <a
-                    href="https://www.linkedin.com/in/aakash-yadav-a30627190/"
-                    target="blank"
-                  >
-                    <i
-                      id="linkedin"
-                      className="fa fa-3x fa-linkedin"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-                <div className="col-sm-3">
-                  <a
-                    href="https://www.instagram.com/aakash_igram/"
-                    target="blank"
-                  >
-                    <i
-                      id="instagram"
-                      className="fa fa-3x fa-instagram"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-                <div className="col-sm-3">
-                  <a href="https://twitter.com/Aakashv0007" target="blank">
-                    <i
-                      id="twitter"
-                      className="fa fa-3x fa-twitter"
-                      aria-hidden="true"
-                    ></i>
-                  </a>
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
+        <br />
+        <br />
       </div>
-      <br />
-      <br />
-    </div>
-  );
+      );
 }

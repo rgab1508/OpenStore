@@ -1,4 +1,10 @@
 # Open Store
+# [View Demo Video](https://www.youtube.com/watch?v=sHytyvUQB0Q)
+# [Deployed Website Link](http://206.189.142.182/) 
+
+* In order to buy and sell assets, one must have metamask account. 
+* You can ask us for free ETH or you will need to pay ETH on the platform in order to have a demo of the items.
+* You can still view items **without having ETH**.
 
 # Tagline
 
