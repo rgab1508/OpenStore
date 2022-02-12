@@ -1,6 +1,6 @@
 import React from "react";
 import Web3Modal from "web3modal";
-import { nftaddress, nftmarketaddress } from "../config";
+import { nftaddress, nftmarketaddress, projAddress } from "../config";
 import UserCard from "./UserCard";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import NFTMarket from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
@@ -18,45 +18,45 @@ const ItemList = () => {
   }, []);
 
   const getItems = async () => {
-    const web3Modal = new Web3Modal({
-      network: "mumbai",
-      cacheProvider: true,
-    });
+    try {
+      const web3Modal = new Web3Modal(projAddress);
+      const connection = await web3Modal.connect();
+      const provider = new ethers.providers.Web3Provider(connection);
+      const signer = provider.getSigner();
 
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
-    const signer = provider.getSigner();
+      const marketContract = new ethers.Contract(
+        nftmarketaddress,
+        NFTMarket.abi,
+        signer
+      );
+      const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
+      const data = await marketContract.fetchPurchasedNFTs();
 
-    const marketContract = new ethers.Contract(
-      nftmarketaddress,
-      NFTMarket.abi,
-      signer
-    );
-    const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider);
-    const data = await marketContract.fetchPurchasedNFTs();
+      console.log(data);
 
-    console.log(data);
+      let newItems = await Promise.all(
+        data.map(async (d) => {
+          const tokenUri = await tokenContract.tokenURI(d.tokenId);
+          const meta = await axios.get(tokenUri);
+          const price = ethers.utils.formatUnits(d.price.toString(), "ether");
 
-    let newItems = await Promise.all(
-      data.map(async (d) => {
-        const tokenUri = await tokenContract.tokenURI(d.tokenId);
-        const meta = await axios.get(tokenUri);
-        const price = ethers.utils.formatUnits(d.price.toString(), "ether");
+          return {
+            price,
+            tokenId: d.tokenId.toNumber(),
+            seller: d.seller,
+            owner: d.owner,
+            image: meta.data.image,
+            name: meta.data.name,
+            description: meta.data.description,
+          };
+        })
+      );
+      console.log(newItems);
 
-        return {
-          price,
-          tokenId: d.tokenId.toNumber(),
-          seller: d.seller,
-          owner: d.owner,
-          image: meta.data.image,
-          name: meta.data.name,
-          description: meta.data.description,
-        };
-      })
-    );
-    console.log(newItems);
-
-    setItems(newItems);
+      setItems(newItems);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (

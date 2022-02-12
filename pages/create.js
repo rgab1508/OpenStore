@@ -11,8 +11,7 @@ import Footer from "../components/Footer";
 
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0");
 
-import { nftaddress, nftmarketaddress } from "../config";
-
+import { nftaddress, nftmarketaddress, projAddress } from "../config";
 import NFT from "../artifacts/contracts/NFT.sol/NFT.json";
 import NFTMarket from "../artifacts/contracts/NFTMarket.sol/NFTMarket.json";
 
@@ -58,24 +57,23 @@ export default function CreateItem() {
   }
 
   async function createSale(url) {
-    const web3Modal = new Web3Modal();
+    const web3Modal = new Web3Modal(projAddress);
     const connection = await web3Modal.connect();
     const provider = new ethers.providers.Web3Provider(connection);
     const signer = provider.getSigner();
-    console.log(url);
 
     /* next, create the item */
     try {
       let contract = new ethers.Contract(nftaddress, NFT.abi, signer);
       let transaction = await contract.createToken(url);
       let tx = await transaction.wait();
-      console.log(tx);
+      console.log("Transaction", tx);
       let event = tx.events[0];
       let value = event.args[2];
       let tokenId = value.toNumber();
-      console.log(values);
+      console.log("Values", values);
       const price = ethers.utils.parseUnits(values.price, "ether");
-      console.log(price.toString());
+      console.log("Price", price.toString());
 
       /* then list the item for sale on the marketplace */
       contract = new ethers.Contract(nftmarketaddress, NFTMarket.abi, signer);
@@ -106,8 +104,6 @@ export default function CreateItem() {
       };
     });
   };
-
-  useEffect(() => console.log(values), [values]);
 
   return (
     <div>
@@ -216,10 +212,6 @@ export default function CreateItem() {
           </div>
         </div>
       </main>
-      <footer>
-        <WaveFooter />
-        <Footer />
-      </footer>
     </div>
   );
 }
