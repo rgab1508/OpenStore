@@ -1,5 +1,6 @@
 # Open Store
 
+# [Demo Video](https://www.youtube.com/watch?v=sHytyvUQB0Q)
 # Tagline
 
 Open Store is a NFT marketplace where traders can buy and sell NFT tokens through the usage of ethers and track the ownership of digital assets.
