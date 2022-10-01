@@ -35,4 +35,13 @@ Open Store is a NFT marketplace where traders can buy and sell NFT tokens throug
 
 # Technologies Used
 
-Polygon, IPFS, Next.js, Hardhat, Ethereum, Solidity, Metamask,HTML/CSS, BootStrap, JavaScript
+* Polygon
+* IPFS
+* Next.js
+* Hardhat
+* Ethereum
+* Solidity
+* Metamask
+* HTML/CSS
+* BootStrap
+* JavaScript
